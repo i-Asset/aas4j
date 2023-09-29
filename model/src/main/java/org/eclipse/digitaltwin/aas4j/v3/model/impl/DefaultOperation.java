@@ -14,14 +14,13 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.*;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.OperationBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package org.eclipse.digitaltwin.aas4j.v3.model.Operation
@@ -32,38 +31,38 @@ import java.util.Objects;
 @IRI("aas:Operation")
 public class DefaultOperation implements Operation {
 
-    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecifications")
+    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extensions")
+    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extension")
     protected List<Extension> extensions = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticID")
-    protected Reference semanticID;
+    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticId")
+    protected Reference semanticId;
 
     @IRI("https://admin-shell.io/aas/3/0/HasSemantics/supplementalSemanticIds")
     protected List<Reference> supplementalSemanticIds = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/Operation/inoutputVariables")
+    @IRI("https://admin-shell.io/aas/3/0/Operation/inoutputVariable")
     protected List<OperationVariable> inoutputVariables = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/Operation/inputVariables")
+    @IRI("https://admin-shell.io/aas/3/0/Operation/inputVariable")
     protected List<OperationVariable> inputVariables = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/Operation/outputVariables")
+    @IRI("https://admin-shell.io/aas/3/0/Operation/outputVariable")
     protected List<OperationVariable> outputVariables = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/Qualifiable/qualifiers")
+    @IRI("https://admin-shell.io/aas/3/0/Qualifiable/qualifier")
     protected List<Qualifier> qualifiers = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/category")
     protected String category;
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/description")
-    protected List<LangStringTextType> description = new ArrayList<>();
+    protected List<LangString> descriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/displayName")
-    protected List<LangStringNameType> displayName = new ArrayList<>();
+    protected List<LangString> displayNames = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/idShort")
     protected String idShort;
@@ -78,11 +77,11 @@ public class DefaultOperation implements Operation {
             this.inputVariables,
             this.outputVariables,
             this.embeddedDataSpecifications,
-            this.semanticID,
+            this.semanticId,
             this.supplementalSemanticIds,
             this.category,
-            this.description,
-            this.displayName,
+            this.descriptions,
+            this.displayNames,
             this.idShort,
             this.extensions,
             this.qualifiers);
@@ -102,11 +101,11 @@ public class DefaultOperation implements Operation {
                 Objects.equals(this.inputVariables, other.inputVariables) &&
                 Objects.equals(this.outputVariables, other.outputVariables) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
-                Objects.equals(this.semanticID, other.semanticID) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.supplementalSemanticIds, other.supplementalSemanticIds) &&
                 Objects.equals(this.category, other.category) &&
-                Objects.equals(this.description, other.description) &&
-                Objects.equals(this.displayName, other.displayName) &&
+                Objects.equals(this.descriptions, other.descriptions) &&
+                Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.extensions, other.extensions) &&
                 Objects.equals(this.qualifiers, other.qualifiers);
@@ -154,13 +153,13 @@ public class DefaultOperation implements Operation {
     }
 
     @Override
-    public Reference getSemanticID() {
-        return semanticID;
+    public Reference getSemanticId() {
+        return semanticId;
     }
 
     @Override
-    public void setSemanticID(Reference semanticID) {
-        this.semanticID = semanticID;
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override
@@ -184,23 +183,23 @@ public class DefaultOperation implements Operation {
     }
 
     @Override
-    public List<LangStringTextType> getDescription() {
-        return description;
+    public List<LangString> getDescriptions() {
+        return descriptions;
     }
 
     @Override
-    public void setDescription(List<LangStringTextType> description) {
-        this.description = description;
+    public void setDescriptions(List<LangString> descriptions) {
+        this.descriptions = descriptions;
     }
 
     @Override
-    public List<LangStringNameType> getDisplayName() {
-        return displayName;
+    public List<LangString> getDisplayNames() {
+        return displayNames;
     }
 
     @Override
-    public void setDisplayName(List<LangStringNameType> displayName) {
-        this.displayName = displayName;
+    public void setDisplayNames(List<LangString> displayNames) {
+        this.displayNames = displayNames;
     }
 
     @Override

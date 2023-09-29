@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Enumeration for denoting whether an element is a template or an instance.
@@ -30,13 +29,33 @@ public enum ModellingKind {
      * corresponding element template.
      */
     @IRI("https://admin-shell.io/aas/3/0/ModellingKind/Instance")
-    INSTANCE,
+    INSTANCE("Instance"),
 
     /**
      * Specification of the common features of a structured element in sufficient detail that such a
      * instance can be instantiated using it
      */
     @IRI("https://admin-shell.io/aas/3/0/ModellingKind/Template")
-    TEMPLATE;
+    TEMPLATE("Template");
+
+    private String value;
+
+    ModellingKind(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static ModellingKind fromValue(String text) {
+        for (ModellingKind b : ModellingKind.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

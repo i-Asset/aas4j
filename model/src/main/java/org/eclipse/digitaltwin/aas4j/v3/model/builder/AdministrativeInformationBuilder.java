@@ -14,12 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.AdministrativeInformation;
-import org.eclipse.digitaltwin.aas4j.v3.model.EmbeddedDataSpecification;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class AdministrativeInformationBuilder<T extends AdministrativeInformation, B extends AdministrativeInformationBuilder<T, B>>
     extends ExtendableBuilder<T, B> {
@@ -47,13 +45,13 @@ public abstract class AdministrativeInformationBuilder<T extends AdministrativeI
     }
 
     /**
-     * This function allows setting a value for templateID
+     * This function allows setting a value for templateId
      * 
-     * @param templateID desired value to be set
-     * @return Builder object with new value for templateID
+     * @param templateId desired value to be set
+     * @return Builder object with new value for templateId
      */
-    public B templateID(String templateID) {
-        getBuildingInstance().setTemplateID(templateID);
+    public B templateId(String templateId) {
+        getBuildingInstance().setTemplateId(templateId);
         return getSelf();
     }
 
@@ -82,11 +80,11 @@ public abstract class AdministrativeInformationBuilder<T extends AdministrativeI
     /**
      * This function allows adding a value to the List embeddedDataSpecifications
      * 
-     * @param embeddedDataSpecifications desired value to be added
+     * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public B embeddedDataSpecifications(EmbeddedDataSpecification embeddedDataSpecifications) {
-        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecifications);
+    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
+        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
         return getSelf();
     }
 }

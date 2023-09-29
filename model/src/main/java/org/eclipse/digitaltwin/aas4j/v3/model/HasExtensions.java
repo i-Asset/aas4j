@@ -14,11 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Element that can be extended by proprietary extensions.
@@ -31,17 +32,17 @@ public interface HasExtensions {
     /**
      * An extension of the element.
      *
-     * More information under https://admin-shell.io/aas/3/0/HasExtensions/extensions
+     * More information under https://admin-shell.io/aas/3/0/HasExtensions/extension
      *
      * @return Returns the List of Extensions for the property extensions.
      */
-    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extensions")
+    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extension")
     List<Extension> getExtensions();
 
     /**
      * An extension of the element.
      *
-     * More information under https://admin-shell.io/aas/3/0/HasExtensions/extensions
+     * More information under https://admin-shell.io/aas/3/0/HasExtensions/extension
      *
      * @param extensions desired value for the property extensions.
      */

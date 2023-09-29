@@ -14,17 +14,13 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.DataTypeDefXSD;
-import org.eclipse.digitaltwin.aas4j.v3.model.Qualifier;
-import org.eclipse.digitaltwin.aas4j.v3.model.QualifierKind;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.QualifierBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package org.eclipse.digitaltwin.aas4j.v3.model.Qualifier
@@ -36,8 +32,8 @@ import java.util.Objects;
 @IRI("aas:Qualifier")
 public class DefaultQualifier implements Qualifier {
 
-    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticID")
-    protected Reference semanticID;
+    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticId")
+    protected Reference semanticId;
 
     @IRI("https://admin-shell.io/aas/3/0/HasSemantics/supplementalSemanticIds")
     protected List<Reference> supplementalSemanticIds = new ArrayList<>();
@@ -51,13 +47,14 @@ public class DefaultQualifier implements Qualifier {
     @IRI("https://admin-shell.io/aas/3/0/Qualifier/value")
     protected String value;
 
-    @IRI("https://admin-shell.io/aas/3/0/Qualifier/valueID")
-    protected Reference valueID;
+    @IRI("https://admin-shell.io/aas/3/0/Qualifier/valueId")
+    protected Reference valueId;
 
     @IRI("https://admin-shell.io/aas/3/0/Qualifier/valueType")
-    protected DataTypeDefXSD valueType;
+    protected DataTypeDefXsd valueType;
 
     public DefaultQualifier() {
+        this.kind = QualifierKind.CONCEPT_QUALIFIER;
 
     }
 
@@ -66,9 +63,9 @@ public class DefaultQualifier implements Qualifier {
         return Objects.hash(this.kind,
             this.type,
             this.value,
-            this.valueID,
+            this.valueId,
             this.valueType,
-            this.semanticID,
+            this.semanticId,
             this.supplementalSemanticIds);
     }
 
@@ -85,9 +82,9 @@ public class DefaultQualifier implements Qualifier {
             return Objects.equals(this.kind, other.kind) &&
                 Objects.equals(this.type, other.type) &&
                 Objects.equals(this.value, other.value) &&
-                Objects.equals(this.valueID, other.valueID) &&
+                Objects.equals(this.valueId, other.valueId) &&
                 Objects.equals(this.valueType, other.valueType) &&
-                Objects.equals(this.semanticID, other.semanticID) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.supplementalSemanticIds, other.supplementalSemanticIds);
         }
     }
@@ -123,33 +120,33 @@ public class DefaultQualifier implements Qualifier {
     }
 
     @Override
-    public Reference getValueID() {
-        return valueID;
+    public Reference getValueId() {
+        return valueId;
     }
 
     @Override
-    public void setValueID(Reference valueID) {
-        this.valueID = valueID;
+    public void setValueId(Reference valueId) {
+        this.valueId = valueId;
     }
 
     @Override
-    public DataTypeDefXSD getValueType() {
+    public DataTypeDefXsd getValueType() {
         return valueType;
     }
 
     @Override
-    public void setValueType(DataTypeDefXSD valueType) {
+    public void setValueType(DataTypeDefXsd valueType) {
         this.valueType = valueType;
     }
 
     @Override
-    public Reference getSemanticID() {
-        return semanticID;
+    public Reference getSemanticId() {
+        return semanticId;
     }
 
     @Override
-    public void setSemanticID(Reference semanticID) {
-        this.semanticID = semanticID;
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override

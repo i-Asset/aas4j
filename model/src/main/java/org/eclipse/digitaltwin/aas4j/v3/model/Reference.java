@@ -14,76 +14,39 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultReference;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Reference to either a model element of the same or another AAS or to an external entity.
  */
 @KnownSubtypes({
-    @KnownSubtypes.Type(value = DefaultReference.class)
+    @KnownSubtypes.Type(value = ModelReference.class),
+    @KnownSubtypes.Type(value = ExternalReference.class)
 })
 public interface Reference {
 
     /**
      * Unique references in their name space.
      *
-     * More information under https://admin-shell.io/aas/3/0/Reference/keys
+     * More information under https://admin-shell.io/aas/3/0/Reference/key
      *
      * @return Returns the List of Keys for the property keys.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Reference/keys")
+    @IRI("https://admin-shell.io/aas/3/0/Reference/key")
     List<Key> getKeys();
 
     /**
      * Unique references in their name space.
      *
-     * More information under https://admin-shell.io/aas/3/0/Reference/keys
+     * More information under https://admin-shell.io/aas/3/0/Reference/key
      *
      * @param keys desired value for the property keys.
      */
     void setKeys(List<Key> keys);
-
-    /**
-     * 'semanticID' of the referenced model element ('type' = 'ModelReference').
-     *
-     * More information under https://admin-shell.io/aas/3/0/Reference/referredSemanticID
-     *
-     * @return Returns the Reference for the property referredSemanticID.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/Reference/referredSemanticID")
-    Reference getReferredSemanticID();
-
-    /**
-     * 'semanticID' of the referenced model element ('type' = 'ModelReference').
-     *
-     * More information under https://admin-shell.io/aas/3/0/Reference/referredSemanticID
-     *
-     * @param referredSemanticID desired value for the property referredSemanticID.
-     */
-    void setReferredSemanticID(Reference referredSemanticID);
-
-    /**
-     * Type of the reference.
-     *
-     * More information under https://admin-shell.io/aas/3/0/Reference/type
-     *
-     * @return Returns the ReferenceTypes for the property type.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/Reference/type")
-    ReferenceTypes getType();
-
-    /**
-     * Type of the reference.
-     *
-     * More information under https://admin-shell.io/aas/3/0/Reference/type
-     *
-     * @param type desired value for the property type.
-     */
-    void setType(ReferenceTypes type);
 
 }

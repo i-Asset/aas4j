@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultQualifier;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A qualifier is a type-value-pair that makes additional statements w.r.t. the value of the
@@ -89,31 +88,31 @@ public interface Qualifier extends HasSemantics {
     /**
      * Reference to the global unique ID of a coded value.
      *
-     * More information under https://admin-shell.io/aas/3/0/Qualifier/valueID
+     * More information under https://admin-shell.io/aas/3/0/Qualifier/valueId
      *
-     * @return Returns the Reference for the property valueID.
+     * @return Returns the Reference for the property valueId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Qualifier/valueID")
-    Reference getValueID();
+    @IRI("https://admin-shell.io/aas/3/0/Qualifier/valueId")
+    Reference getValueId();
 
     /**
      * Reference to the global unique ID of a coded value.
      *
-     * More information under https://admin-shell.io/aas/3/0/Qualifier/valueID
+     * More information under https://admin-shell.io/aas/3/0/Qualifier/valueId
      *
-     * @param valueID desired value for the property valueID.
+     * @param valueId desired value for the property valueId.
      */
-    void setValueID(Reference valueID);
+    void setValueId(Reference valueId);
 
     /**
      * Data type of the qualifier value.
      *
      * More information under https://admin-shell.io/aas/3/0/Qualifier/valueType
      *
-     * @return Returns the DataTypeDefXSD for the property valueType.
+     * @return Returns the DataTypeDefXsd for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/Qualifier/valueType")
-    DataTypeDefXSD getValueType();
+    DataTypeDefXsd getValueType();
 
     /**
      * Data type of the qualifier value.
@@ -122,6 +121,6 @@ public interface Qualifier extends HasSemantics {
      *
      * @param valueType desired value for the property valueType.
      */
-    void setValueType(DataTypeDefXSD valueType);
+    void setValueType(DataTypeDefXsd valueType);
 
 }

@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.ValueList;
-import org.eclipse.digitaltwin.aas4j.v3.model.ValueReferencePair;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class ValueListBuilder<T extends ValueList, B extends ValueListBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
@@ -36,11 +35,11 @@ public abstract class ValueListBuilder<T extends ValueList, B extends ValueListB
     /**
      * This function allows adding a value to the List valueReferencePairs
      * 
-     * @param valueReferencePairs desired value to be added
+     * @param valueReferencePair desired value to be added
      * @return Builder object with new value for valueReferencePairs
      */
-    public B valueReferencePairs(ValueReferencePair valueReferencePairs) {
-        getBuildingInstance().getValueReferencePairs().add(valueReferencePairs);
+    public B valueReferencePair(ValueReferencePair valueReferencePair) {
+        getBuildingInstance().getValueReferencePairs().add(valueReferencePair);
         return getSelf();
     }
 }

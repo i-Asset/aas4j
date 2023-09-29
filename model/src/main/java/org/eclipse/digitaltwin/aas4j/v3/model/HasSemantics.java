@@ -14,21 +14,23 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Element that can have a semantic definition plus some supplemental semantic definitions.
  */
 @KnownSubtypes({
-    @KnownSubtypes.Type(value = SpecificAssetID.class),
+    @KnownSubtypes.Type(value = SpecificAssetId.class),
     @KnownSubtypes.Type(value = SubmodelElement.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = Extension.class),
-    @KnownSubtypes.Type(value = Qualifier.class)
+    @KnownSubtypes.Type(value = Qualifier.class),
+    @KnownSubtypes.Type(value = SubmodelDescriptor.class)
 })
 public interface HasSemantics {
 
@@ -36,22 +38,22 @@ public interface HasSemantics {
      * Identifier of the semantic definition of the element. It is called semantic ID of the element or
      * also main semantic ID of the element.
      *
-     * More information under https://admin-shell.io/aas/3/0/HasSemantics/semanticID
+     * More information under https://admin-shell.io/aas/3/0/HasSemantics/semanticId
      *
-     * @return Returns the Reference for the property semanticID.
+     * @return Returns the Reference for the property semanticId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticID")
-    Reference getSemanticID();
+    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticId")
+    Reference getSemanticId();
 
     /**
      * Identifier of the semantic definition of the element. It is called semantic ID of the element or
      * also main semantic ID of the element.
      *
-     * More information under https://admin-shell.io/aas/3/0/HasSemantics/semanticID
+     * More information under https://admin-shell.io/aas/3/0/HasSemantics/semanticId
      *
-     * @param semanticID desired value for the property semanticID.
+     * @param semanticId desired value for the property semanticId.
      */
-    void setSemanticID(Reference semanticID);
+    void setSemanticId(Reference semanticId);
 
     /**
      * Identifier of a supplemental semantic definition of the element. It is called supplemental

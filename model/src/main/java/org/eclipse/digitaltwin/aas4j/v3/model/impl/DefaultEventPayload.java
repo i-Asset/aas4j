@@ -14,14 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.EventPayload;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.EventPayloadBuilder;
-
 import java.util.Arrays;
 import java.util.Objects;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package org.eclipse.digitaltwin.aas4j.v3.model.EventPayload
@@ -33,22 +31,22 @@ import java.util.Objects;
 public class DefaultEventPayload implements EventPayload {
 
     @IRI("https://admin-shell.io/aas/3/0/EventPayload/observableReference")
-    protected Reference observableReference;
+    protected ModelReference observableReference;
 
-    @IRI("https://admin-shell.io/aas/3/0/EventPayload/observableSemanticID")
-    protected Reference observableSemanticID;
+    @IRI("https://admin-shell.io/aas/3/0/EventPayload/observableSemanticId")
+    protected Reference observableSemanticId;
 
     @IRI("https://admin-shell.io/aas/3/0/EventPayload/payload")
     protected byte[] payload;
 
     @IRI("https://admin-shell.io/aas/3/0/EventPayload/source")
-    protected Reference source;
+    protected ModelReference source;
 
-    @IRI("https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticID")
-    protected Reference sourceSemanticID;
+    @IRI("https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticId")
+    protected Reference sourceSemanticId;
 
-    @IRI("https://admin-shell.io/aas/3/0/EventPayload/subjectID")
-    protected Reference subjectID;
+    @IRI("https://admin-shell.io/aas/3/0/EventPayload/subjectId")
+    protected Reference subjectId;
 
     @IRI("https://admin-shell.io/aas/3/0/EventPayload/timeStamp")
     protected String timeStamp;
@@ -63,11 +61,11 @@ public class DefaultEventPayload implements EventPayload {
     @Override
     public int hashCode() {
         return Objects.hash(this.observableReference,
-            this.observableSemanticID,
+            this.observableSemanticId,
             Arrays.hashCode(this.payload),
             this.source,
-            this.sourceSemanticID,
-            this.subjectID,
+            this.sourceSemanticId,
+            this.subjectId,
             this.timeStamp,
             this.topic);
     }
@@ -83,34 +81,34 @@ public class DefaultEventPayload implements EventPayload {
         } else {
             DefaultEventPayload other = (DefaultEventPayload) obj;
             return Objects.equals(this.observableReference, other.observableReference) &&
-                Objects.equals(this.observableSemanticID, other.observableSemanticID) &&
+                Objects.equals(this.observableSemanticId, other.observableSemanticId) &&
                 Arrays.equals(this.payload, other.payload) &&
                 Objects.equals(this.source, other.source) &&
-                Objects.equals(this.sourceSemanticID, other.sourceSemanticID) &&
-                Objects.equals(this.subjectID, other.subjectID) &&
+                Objects.equals(this.sourceSemanticId, other.sourceSemanticId) &&
+                Objects.equals(this.subjectId, other.subjectId) &&
                 Objects.equals(this.timeStamp, other.timeStamp) &&
                 Objects.equals(this.topic, other.topic);
         }
     }
 
     @Override
-    public Reference getObservableReference() {
+    public ModelReference getObservableReference() {
         return observableReference;
     }
 
     @Override
-    public void setObservableReference(Reference observableReference) {
+    public void setObservableReference(ModelReference observableReference) {
         this.observableReference = observableReference;
     }
 
     @Override
-    public Reference getObservableSemanticID() {
-        return observableSemanticID;
+    public Reference getObservableSemanticId() {
+        return observableSemanticId;
     }
 
     @Override
-    public void setObservableSemanticID(Reference observableSemanticID) {
-        this.observableSemanticID = observableSemanticID;
+    public void setObservableSemanticId(Reference observableSemanticId) {
+        this.observableSemanticId = observableSemanticId;
     }
 
     @Override
@@ -124,33 +122,33 @@ public class DefaultEventPayload implements EventPayload {
     }
 
     @Override
-    public Reference getSource() {
+    public ModelReference getSource() {
         return source;
     }
 
     @Override
-    public void setSource(Reference source) {
+    public void setSource(ModelReference source) {
         this.source = source;
     }
 
     @Override
-    public Reference getSourceSemanticID() {
-        return sourceSemanticID;
+    public Reference getSourceSemanticId() {
+        return sourceSemanticId;
     }
 
     @Override
-    public void setSourceSemanticID(Reference sourceSemanticID) {
-        this.sourceSemanticID = sourceSemanticID;
+    public void setSourceSemanticId(Reference sourceSemanticId) {
+        this.sourceSemanticId = sourceSemanticId;
     }
 
     @Override
-    public Reference getSubjectID() {
-        return subjectID;
+    public Reference getSubjectId() {
+        return subjectId;
     }
 
     @Override
-    public void setSubjectID(Reference subjectID) {
-        this.subjectID = subjectID;
+    public void setSubjectId(Reference subjectId) {
+        this.subjectId = subjectId;
     }
 
     @Override

@@ -14,12 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.DataTypeDefXSD;
-import org.eclipse.digitaltwin.aas4j.v3.model.Extension;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class ExtensionBuilder<T extends Extension, B extends ExtensionBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
@@ -35,24 +33,24 @@ public abstract class ExtensionBuilder<T extends Extension, B extends ExtensionB
     }
 
     /**
-     * This function allows setting a value for refersTo
+     * This function allows setting a value for refersTos
      * 
-     * @param refersTo desired value to be set
-     * @return Builder object with new value for refersTo
+     * @param refersTos desired value to be set
+     * @return Builder object with new value for refersTos
      */
-    public B refersTo(List<Reference> refersTo) {
-        getBuildingInstance().setRefersTo(refersTo);
+    public B refersTos(List<ModelReference> refersTos) {
+        getBuildingInstance().setRefersTos(refersTos);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List refersTo
+     * This function allows adding a value to the List refersTos
      * 
      * @param refersTo desired value to be added
-     * @return Builder object with new value for refersTo
+     * @return Builder object with new value for refersTos
      */
-    public B refersTo(Reference refersTo) {
-        getBuildingInstance().getRefersTo().add(refersTo);
+    public B refersTo(ModelReference refersTo) {
+        getBuildingInstance().getRefersTos().add(refersTo);
         return getSelf();
     }
 
@@ -73,19 +71,19 @@ public abstract class ExtensionBuilder<T extends Extension, B extends ExtensionB
      * @param valueType desired value to be set
      * @return Builder object with new value for valueType
      */
-    public B valueType(DataTypeDefXSD valueType) {
+    public B valueType(DataTypeDefXsd valueType) {
         getBuildingInstance().setValueType(valueType);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for semanticID
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticID desired value to be set
-     * @return Builder object with new value for semanticID
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public B semanticID(Reference semanticID) {
-        getBuildingInstance().setSemanticID(semanticID);
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 

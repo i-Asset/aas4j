@@ -14,9 +14,8 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-
-import org.eclipse.digitaltwin.aas4j.v3.model.LangStringTextType;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class LangStringTextTypeBuilder<T extends LangStringTextType, B extends LangStringTextTypeBuilder<T, B>>
     extends ExtendableBuilder<T, B> {

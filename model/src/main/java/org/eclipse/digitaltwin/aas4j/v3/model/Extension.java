@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultExtension;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Single extension of an element.
@@ -53,19 +53,19 @@ public interface Extension extends HasSemantics {
      *
      * More information under https://admin-shell.io/aas/3/0/Extension/refersTo
      *
-     * @return Returns the List of References for the property refersTo.
+     * @return Returns the List of ModelReferences for the property refersTos.
      */
     @IRI("https://admin-shell.io/aas/3/0/Extension/refersTo")
-    List<Reference> getRefersTo();
+    List<ModelReference> getRefersTos();
 
     /**
      * Reference to an element the extension refers to.
      *
      * More information under https://admin-shell.io/aas/3/0/Extension/refersTo
      *
-     * @param refersTo desired value for the property refersTo.
+     * @param refersTos desired value for the property refersTos.
      */
-    void setRefersTo(List<Reference> refersTo);
+    void setRefersTos(List<ModelReference> refersTos);
 
     /**
      * Value of the extension
@@ -91,10 +91,10 @@ public interface Extension extends HasSemantics {
      *
      * More information under https://admin-shell.io/aas/3/0/Extension/valueType
      *
-     * @return Returns the DataTypeDefXSD for the property valueType.
+     * @return Returns the DataTypeDefXsd for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/Extension/valueType")
-    DataTypeDefXSD getValueType();
+    DataTypeDefXsd getValueType();
 
     /**
      * Type of the value of the extension.
@@ -103,6 +103,6 @@ public interface Extension extends HasSemantics {
      *
      * @param valueType desired value for the property valueType.
      */
-    void setValueType(DataTypeDefXSD valueType);
+    void setValueType(DataTypeDefXsd valueType);
 
 }

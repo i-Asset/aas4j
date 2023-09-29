@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultEventPayload;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Defines the necessary information of an event instance sent out or received.
@@ -33,10 +32,10 @@ public interface EventPayload {
      *
      * More information under https://admin-shell.io/aas/3/0/EventPayload/observableReference
      *
-     * @return Returns the Reference for the property observableReference.
+     * @return Returns the ModelReference for the property observableReference.
      */
     @IRI("https://admin-shell.io/aas/3/0/EventPayload/observableReference")
-    Reference getObservableReference();
+    ModelReference getObservableReference();
 
     /**
      * Reference to the referable, which defines the scope of the event.
@@ -45,26 +44,26 @@ public interface EventPayload {
      *
      * @param observableReference desired value for the property observableReference.
      */
-    void setObservableReference(Reference observableReference);
+    void setObservableReference(ModelReference observableReference);
 
     /**
-     * 'semanticID' of the referable which defines the scope of the event, if available.
+     * 'semanticId' of the referable which defines the scope of the event, if available.
      *
-     * More information under https://admin-shell.io/aas/3/0/EventPayload/observableSemanticID
+     * More information under https://admin-shell.io/aas/3/0/EventPayload/observableSemanticId
      *
-     * @return Returns the Reference for the property observableSemanticID.
+     * @return Returns the Reference for the property observableSemanticId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/EventPayload/observableSemanticID")
-    Reference getObservableSemanticID();
+    @IRI("https://admin-shell.io/aas/3/0/EventPayload/observableSemanticId")
+    Reference getObservableSemanticId();
 
     /**
-     * 'semanticID' of the referable which defines the scope of the event, if available.
+     * 'semanticId' of the referable which defines the scope of the event, if available.
      *
-     * More information under https://admin-shell.io/aas/3/0/EventPayload/observableSemanticID
+     * More information under https://admin-shell.io/aas/3/0/EventPayload/observableSemanticId
      *
-     * @param observableSemanticID desired value for the property observableSemanticID.
+     * @param observableSemanticId desired value for the property observableSemanticId.
      */
-    void setObservableSemanticID(Reference observableSemanticID);
+    void setObservableSemanticId(Reference observableSemanticId);
 
     /**
      * Event specific payload.
@@ -91,10 +90,10 @@ public interface EventPayload {
      *
      * More information under https://admin-shell.io/aas/3/0/EventPayload/source
      *
-     * @return Returns the Reference for the property source.
+     * @return Returns the ModelReference for the property source.
      */
     @IRI("https://admin-shell.io/aas/3/0/EventPayload/source")
-    Reference getSource();
+    ModelReference getSource();
 
     /**
      * Reference to the source event element, including identification of 'AssetAdministrationShell',
@@ -104,45 +103,45 @@ public interface EventPayload {
      *
      * @param source desired value for the property source.
      */
-    void setSource(Reference source);
+    void setSource(ModelReference source);
 
     /**
-     * 'semanticID' of the source event element, if available
+     * 'semanticId' of the source event element, if available
      *
-     * More information under https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticID
+     * More information under https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticId
      *
-     * @return Returns the Reference for the property sourceSemanticID.
+     * @return Returns the Reference for the property sourceSemanticId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticID")
-    Reference getSourceSemanticID();
+    @IRI("https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticId")
+    Reference getSourceSemanticId();
 
     /**
-     * 'semanticID' of the source event element, if available
+     * 'semanticId' of the source event element, if available
      *
-     * More information under https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticID
+     * More information under https://admin-shell.io/aas/3/0/EventPayload/sourceSemanticId
      *
-     * @param sourceSemanticID desired value for the property sourceSemanticID.
+     * @param sourceSemanticId desired value for the property sourceSemanticId.
      */
-    void setSourceSemanticID(Reference sourceSemanticID);
-
-    /**
-     * Subject, who/which initiated the creation.
-     *
-     * More information under https://admin-shell.io/aas/3/0/EventPayload/subjectID
-     *
-     * @return Returns the Reference for the property subjectID.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/EventPayload/subjectID")
-    Reference getSubjectID();
+    void setSourceSemanticId(Reference sourceSemanticId);
 
     /**
      * Subject, who/which initiated the creation.
      *
-     * More information under https://admin-shell.io/aas/3/0/EventPayload/subjectID
+     * More information under https://admin-shell.io/aas/3/0/EventPayload/subjectId
      *
-     * @param subjectID desired value for the property subjectID.
+     * @return Returns the Reference for the property subjectId.
      */
-    void setSubjectID(Reference subjectID);
+    @IRI("https://admin-shell.io/aas/3/0/EventPayload/subjectId")
+    Reference getSubjectId();
+
+    /**
+     * Subject, who/which initiated the creation.
+     *
+     * More information under https://admin-shell.io/aas/3/0/EventPayload/subjectId
+     *
+     * @param subjectId desired value for the property subjectId.
+     */
+    void setSubjectId(Reference subjectId);
 
     /**
      * Timestamp in UTC, when this event was triggered.

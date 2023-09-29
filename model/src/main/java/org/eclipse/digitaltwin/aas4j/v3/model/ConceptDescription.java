@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultConceptDescription;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * The semantics of a property or other elements that may have a semantic description is defined by
@@ -35,18 +35,18 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
      *
      * More information under https://admin-shell.io/aas/3/0/ConceptDescription/isCaseOf
      *
-     * @return Returns the List of References for the property isCaseOf.
+     * @return Returns the List of References for the property isCaseOfs.
      */
     @IRI("https://admin-shell.io/aas/3/0/ConceptDescription/isCaseOf")
-    List<Reference> getIsCaseOf();
+    List<Reference> getIsCaseOfs();
 
     /**
      * Reference to an external definition the concept is compatible to or was derived from.
      *
      * More information under https://admin-shell.io/aas/3/0/ConceptDescription/isCaseOf
      *
-     * @param isCaseOf desired value for the property isCaseOf.
+     * @param isCaseOfs desired value for the property isCaseOfs.
      */
-    void setIsCaseOf(List<Reference> isCaseOf);
+    void setIsCaseOfs(List<Reference> isCaseOfs);
 
 }

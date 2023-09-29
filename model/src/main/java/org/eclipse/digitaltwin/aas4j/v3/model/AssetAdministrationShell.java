@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultAssetAdministrationShell;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * An asset administration shell.
@@ -53,10 +53,10 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * More information under https://admin-shell.io/aas/3/0/AssetAdministrationShell/derivedFrom
      *
-     * @return Returns the Reference for the property derivedFrom.
+     * @return Returns the ModelReference for the property derivedFrom.
      */
     @IRI("https://admin-shell.io/aas/3/0/AssetAdministrationShell/derivedFrom")
-    Reference getDerivedFrom();
+    ModelReference getDerivedFrom();
 
     /**
      * The reference to the AAS the AAS was derived from.
@@ -65,25 +65,25 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * @param derivedFrom desired value for the property derivedFrom.
      */
-    void setDerivedFrom(Reference derivedFrom);
+    void setDerivedFrom(ModelReference derivedFrom);
 
     /**
      * References to submodels of the AAS.
      *
-     * More information under https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodels
+     * More information under https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodel
      *
-     * @return Returns the List of References for the property submodels.
+     * @return Returns the List of ModelReferences for the property submodels.
      */
-    @IRI("https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodels")
-    List<Reference> getSubmodels();
+    @IRI("https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodel")
+    List<ModelReference> getSubmodels();
 
     /**
      * References to submodels of the AAS.
      *
-     * More information under https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodels
+     * More information under https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodel
      *
      * @param submodels desired value for the property submodels.
      */
-    void setSubmodels(List<Reference> submodels);
+    void setSubmodels(List<ModelReference> submodels);
 
 }

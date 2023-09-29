@@ -14,12 +14,11 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.LangStringPreferredNameTypeIec61360Builder;
-
 import java.util.Objects;
-import org.eclipse.digitaltwin.aas4j.v3.model.LangStringPreferredNameTypeIec61360;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package
@@ -28,7 +27,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.LangStringPreferredNameTypeIec6136
  * String with length 255 maximum and minimum 1 characters and with language tags
  */
 
-@IRI("aas:LangStringPreferredNameTypeIEC61360")
+@IRI("aas:LangStringPreferredNameTypeIec61360")
 public class DefaultLangStringPreferredNameTypeIec61360 implements LangStringPreferredNameTypeIec61360 {
 
     @IRI("https://admin-shell.io/aas/3/0/AbstractLangString/language")

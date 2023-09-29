@@ -14,11 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * An element that is referable by its 'idShort'.
@@ -55,38 +56,38 @@ public interface Referable extends HasExtensions {
      *
      * More information under https://admin-shell.io/aas/3/0/Referable/description
      *
-     * @return Returns the List of LangStringTextTypes for the property description.
+     * @return Returns the List of LangStrings for the property descriptions.
      */
     @IRI("https://admin-shell.io/aas/3/0/Referable/description")
-    List<LangStringTextType> getDescription();
+    List<LangString> getDescriptions();
 
     /**
      * Description or comments on the element.
      *
      * More information under https://admin-shell.io/aas/3/0/Referable/description
      *
-     * @param description desired value for the property description.
+     * @param descriptions desired value for the property descriptions.
      */
-    void setDescription(List<LangStringTextType> description);
+    void setDescriptions(List<LangString> descriptions);
 
     /**
      * Display name. Can be provided in several languages.
      *
      * More information under https://admin-shell.io/aas/3/0/Referable/displayName
      *
-     * @return Returns the List of LangStringNameTypes for the property displayName.
+     * @return Returns the List of LangStrings for the property displayNames.
      */
     @IRI("https://admin-shell.io/aas/3/0/Referable/displayName")
-    List<LangStringNameType> getDisplayName();
+    List<LangString> getDisplayNames();
 
     /**
      * Display name. Can be provided in several languages.
      *
      * More information under https://admin-shell.io/aas/3/0/Referable/displayName
      *
-     * @param displayName desired value for the property displayName.
+     * @param displayNames desired value for the property displayNames.
      */
-    void setDisplayName(List<LangStringNameType> displayName);
+    void setDisplayNames(List<LangString> displayNames);
 
     /**
      * In case of identifiables this attribute is a short name of the element. In case of referable this

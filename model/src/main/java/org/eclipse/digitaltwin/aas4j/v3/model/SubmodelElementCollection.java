@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
+import java.util.List;
+
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultSubmodelElementCollection;
-
-import java.util.Collection;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A submodel element collection is a kind of struct, i.e. a a logical encapsulation of multiple
@@ -35,18 +35,18 @@ public interface SubmodelElementCollection extends SubmodelElement {
      *
      * More information under https://admin-shell.io/aas/3/0/SubmodelElementCollection/value
      *
-     * @return Returns the Collection of SubmodelElements for the property value.
+     * @return Returns the List of SubmodelElements for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/SubmodelElementCollection/value")
-    Collection<SubmodelElement> getValue();
+    List<SubmodelElement> getValues();
 
     /**
      * Submodel element contained in the collection.
      *
      * More information under https://admin-shell.io/aas/3/0/SubmodelElementCollection/value
      *
-     * @param value desired value for the property value.
+     * @param values desired value for the property values.
      */
-    void setValue(Collection<SubmodelElement> value);
+    void setValues(List<SubmodelElement> values);
 
 }

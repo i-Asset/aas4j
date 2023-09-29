@@ -27,10 +27,10 @@ import org.eclipse.digitaltwin.aas4j.v3.model.Submodel;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultEnvironment;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultKey;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultModelReference;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultOperation;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultOperationVariable;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultProperty;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultReference;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultSubmodel;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultSubmodelElementList;
 import org.junit.Assert;
@@ -50,17 +50,17 @@ public class AasUtilsTest {
                 .value("bar")
                 .build();
         Environment environment = new DefaultEnvironment.Builder()
-                .submodels(new DefaultSubmodel.Builder()
+                .submodel(new DefaultSubmodel.Builder()
                         .id(submodelId)
-                        .submodelElements(expected)
+                        .submodelElement(expected)
                         .build())
                 .build();
-        Reference reference = new DefaultReference.Builder()
-                .keys(new DefaultKey.Builder()
+        Reference reference = new DefaultModelReference.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL)
                         .value(submodelId)
                         .build())
-                .keys(new DefaultKey.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL_ELEMENT)
                         .value(submodelElementIdShort)
                         .build())
@@ -93,26 +93,26 @@ public class AasUtilsTest {
                 .value("bar")
                 .build();
         Environment environment = new DefaultEnvironment.Builder()
-                .submodels(new DefaultSubmodel.Builder()
+                .submodel(new DefaultSubmodel.Builder()
                         .id(submodelId)
-                        .submodelElements(new DefaultOperation.Builder()
+                        .submodelElement(new DefaultOperation.Builder()
                                 .idShort(submodelElementIdShort)
-                                .inputVariables(new DefaultOperationVariable.Builder()
+                                .inputVariable(new DefaultOperationVariable.Builder()
                                         .value(expected)
                                         .build())
                                 .build())
                         .build())
                 .build();
-        Reference reference = new DefaultReference.Builder()
-                .keys(new DefaultKey.Builder()
+        Reference reference = new DefaultModelReference.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL)
                         .value(submodelId)
                         .build())
-                .keys(new DefaultKey.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL_ELEMENT)
                         .value(submodelElementIdShort)
                         .build())
-                .keys(new DefaultKey.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL_ELEMENT)
                         .value(submodelElement2IdShort)
                         .build())
@@ -129,24 +129,24 @@ public class AasUtilsTest {
                 .value("bar")
                 .build();
         Environment environment = new DefaultEnvironment.Builder()
-                .submodels(new DefaultSubmodel.Builder()
+                .submodel(new DefaultSubmodel.Builder()
                         .id(submodelId)
-                        .submodelElements(new DefaultSubmodelElementList.Builder()
+                        .submodelElement(new DefaultSubmodelElementList.Builder()
                                 .idShort(submodelElementIdShort)
                                 .value(expected)
                                 .build())
                         .build())
                 .build();
-        Reference reference = new DefaultReference.Builder()
-                .keys(new DefaultKey.Builder()
+        Reference reference = new DefaultModelReference.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL)
                         .value(submodelId)
                         .build())
-                .keys(new DefaultKey.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL_ELEMENT)
                         .value(submodelElementIdShort)
                         .build())
-                .keys(new DefaultKey.Builder()
+                .key(new DefaultKey.Builder()
                         .type(KeyTypes.SUBMODEL_ELEMENT)
                         .value("0")
                         .build())

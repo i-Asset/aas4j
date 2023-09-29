@@ -14,10 +14,8 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-
-import org.eclipse.digitaltwin.aas4j.v3.model.OperationVariable;
-import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class OperationVariableBuilder<T extends OperationVariable, B extends OperationVariableBuilder<T, B>>
     extends ExtendableBuilder<T, B> {

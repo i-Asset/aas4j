@@ -14,15 +14,13 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.ValueList;
-import org.eclipse.digitaltwin.aas4j.v3.model.ValueReferencePair;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.ValueListBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package org.eclipse.digitaltwin.aas4j.v3.model.ValueList
@@ -33,7 +31,7 @@ import java.util.Objects;
 @IRI("aas:ValueList")
 public class DefaultValueList implements ValueList {
 
-    @IRI("https://admin-shell.io/aas/3/0/ValueList/valueReferencePairs")
+    @IRI("https://admin-shell.io/aas/3/0/ValueList/valueReferencePair")
     protected List<ValueReferencePair> valueReferencePairs = new ArrayList<>();
 
     public DefaultValueList() {}

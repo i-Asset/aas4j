@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultAdministrativeInformation;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Administrative meta-information for an element like version information.
@@ -69,21 +68,21 @@ public interface AdministrativeInformation extends HasDataSpecification {
     /**
      * Identifier of the template that guided the creation of the element.
      *
-     * More information under https://admin-shell.io/aas/3/0/AdministrativeInformation/templateID
+     * More information under https://admin-shell.io/aas/3/0/AdministrativeInformation/templateId
      *
-     * @return Returns the String for the property templateID.
+     * @return Returns the String for the property templateId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/AdministrativeInformation/templateID")
-    String getTemplateID();
+    @IRI("https://admin-shell.io/aas/3/0/AdministrativeInformation/templateId")
+    String getTemplateId();
 
     /**
      * Identifier of the template that guided the creation of the element.
      *
-     * More information under https://admin-shell.io/aas/3/0/AdministrativeInformation/templateID
+     * More information under https://admin-shell.io/aas/3/0/AdministrativeInformation/templateId
      *
-     * @param templateID desired value for the property templateID.
+     * @param templateId desired value for the property templateId.
      */
-    void setTemplateID(String templateID);
+    void setTemplateId(String templateId);
 
     /**
      * Version of the element.

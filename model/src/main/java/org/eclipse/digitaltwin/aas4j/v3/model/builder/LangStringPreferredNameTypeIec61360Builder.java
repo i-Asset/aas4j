@@ -14,9 +14,8 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-
-import org.eclipse.digitaltwin.aas4j.v3.model.LangStringPreferredNameTypeIec61360;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class LangStringPreferredNameTypeIec61360Builder<T extends LangStringPreferredNameTypeIec61360, B extends LangStringPreferredNameTypeIec61360Builder<T, B>>
     extends ExtendableBuilder<T, B> {

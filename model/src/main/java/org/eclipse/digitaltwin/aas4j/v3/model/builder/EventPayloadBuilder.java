@@ -14,10 +14,8 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-
-import org.eclipse.digitaltwin.aas4j.v3.model.EventPayload;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class EventPayloadBuilder<T extends EventPayload, B extends EventPayloadBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
@@ -27,19 +25,19 @@ public abstract class EventPayloadBuilder<T extends EventPayload, B extends Even
      * @param observableReference desired value to be set
      * @return Builder object with new value for observableReference
      */
-    public B observableReference(Reference observableReference) {
+    public B observableReference(ModelReference observableReference) {
         getBuildingInstance().setObservableReference(observableReference);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for observableSemanticID
+     * This function allows setting a value for observableSemanticId
      * 
-     * @param observableSemanticID desired value to be set
-     * @return Builder object with new value for observableSemanticID
+     * @param observableSemanticId desired value to be set
+     * @return Builder object with new value for observableSemanticId
      */
-    public B observableSemanticID(Reference observableSemanticID) {
-        getBuildingInstance().setObservableSemanticID(observableSemanticID);
+    public B observableSemanticId(Reference observableSemanticId) {
+        getBuildingInstance().setObservableSemanticId(observableSemanticId);
         return getSelf();
     }
 
@@ -60,30 +58,30 @@ public abstract class EventPayloadBuilder<T extends EventPayload, B extends Even
      * @param source desired value to be set
      * @return Builder object with new value for source
      */
-    public B source(Reference source) {
+    public B source(ModelReference source) {
         getBuildingInstance().setSource(source);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for sourceSemanticID
+     * This function allows setting a value for sourceSemanticId
      * 
-     * @param sourceSemanticID desired value to be set
-     * @return Builder object with new value for sourceSemanticID
+     * @param sourceSemanticId desired value to be set
+     * @return Builder object with new value for sourceSemanticId
      */
-    public B sourceSemanticID(Reference sourceSemanticID) {
-        getBuildingInstance().setSourceSemanticID(sourceSemanticID);
+    public B sourceSemanticId(Reference sourceSemanticId) {
+        getBuildingInstance().setSourceSemanticId(sourceSemanticId);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for subjectID
+     * This function allows setting a value for subjectId
      * 
-     * @param subjectID desired value to be set
-     * @return Builder object with new value for subjectID
+     * @param subjectId desired value to be set
+     * @return Builder object with new value for subjectId
      */
-    public B subjectID(Reference subjectID) {
-        getBuildingInstance().setSubjectID(subjectID);
+    public B subjectId(Reference subjectId) {
+        getBuildingInstance().setSubjectId(subjectId);
         return getSelf();
     }
 

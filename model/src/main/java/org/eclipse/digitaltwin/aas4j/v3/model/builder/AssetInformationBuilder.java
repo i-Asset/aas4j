@@ -14,13 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.AssetInformation;
-import org.eclipse.digitaltwin.aas4j.v3.model.AssetKind;
-import org.eclipse.digitaltwin.aas4j.v3.model.Resource;
-import org.eclipse.digitaltwin.aas4j.v3.model.SpecificAssetID;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class AssetInformationBuilder<T extends AssetInformation, B extends AssetInformationBuilder<T, B>>
     extends ExtendableBuilder<T, B> {
@@ -59,13 +56,13 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
     }
 
     /**
-     * This function allows setting a value for globalAssetID
+     * This function allows setting a value for globalAssetId
      * 
-     * @param globalAssetID desired value to be set
-     * @return Builder object with new value for globalAssetID
+     * @param globalAssetId desired value to be set
+     * @return Builder object with new value for globalAssetId
      */
-    public B globalAssetID(String globalAssetID) {
-        getBuildingInstance().setGlobalAssetID(globalAssetID);
+    public B globalAssetId(String globalAssetId) {
+        getBuildingInstance().setGlobalAssetId(globalAssetId);
         return getSelf();
     }
 
@@ -75,7 +72,7 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
      * @param specificAssetIds desired value to be set
      * @return Builder object with new value for specificAssetIds
      */
-    public B specificAssetIds(List<SpecificAssetID> specificAssetIds) {
+    public B specificAssetIds(List<SpecificAssetId> specificAssetIds) {
         getBuildingInstance().setSpecificAssetIds(specificAssetIds);
         return getSelf();
     }
@@ -83,11 +80,11 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
     /**
      * This function allows adding a value to the List specificAssetIds
      * 
-     * @param specificAssetIds desired value to be added
+     * @param specificAssetId desired value to be added
      * @return Builder object with new value for specificAssetIds
      */
-    public B specificAssetIds(SpecificAssetID specificAssetIds) {
-        getBuildingInstance().getSpecificAssetIds().add(specificAssetIds);
+    public B specificAssetId(SpecificAssetId specificAssetId) {
+        getBuildingInstance().getSpecificAssetIds().add(specificAssetId);
         return getSelf();
     }
 }

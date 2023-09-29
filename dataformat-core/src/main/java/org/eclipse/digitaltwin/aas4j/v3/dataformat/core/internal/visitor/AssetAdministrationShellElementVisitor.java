@@ -25,6 +25,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.Capability;
 import org.eclipse.digitaltwin.aas4j.v3.model.ConceptDescription;
 import org.eclipse.digitaltwin.aas4j.v3.model.DataElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.DataSpecificationContent;
+import org.eclipse.digitaltwin.aas4j.v3.model.EmbeddedDataSpecification;
 import org.eclipse.digitaltwin.aas4j.v3.model.Entity;
 import org.eclipse.digitaltwin.aas4j.v3.model.Environment;
 import org.eclipse.digitaltwin.aas4j.v3.model.EventElement;
@@ -37,6 +38,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.HasKind;
 import org.eclipse.digitaltwin.aas4j.v3.model.HasSemantics;
 import org.eclipse.digitaltwin.aas4j.v3.model.Identifiable;
 import org.eclipse.digitaltwin.aas4j.v3.model.Key;
+import org.eclipse.digitaltwin.aas4j.v3.model.LangString;
 import org.eclipse.digitaltwin.aas4j.v3.model.LangStringDefinitionTypeIec61360;
 import org.eclipse.digitaltwin.aas4j.v3.model.LangStringNameType;
 import org.eclipse.digitaltwin.aas4j.v3.model.LangStringPreferredNameTypeIec61360;
@@ -53,7 +55,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
 import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.RelationshipElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.Resource;
-import org.eclipse.digitaltwin.aas4j.v3.model.SpecificAssetID;
+import org.eclipse.digitaltwin.aas4j.v3.model.SpecificAssetId;
 import org.eclipse.digitaltwin.aas4j.v3.model.Submodel;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElementCollection;
@@ -132,8 +134,8 @@ public interface AssetAdministrationShellElementVisitor {
         Class<?> type = hasSemantics.getClass();
         if (Extension.class.isAssignableFrom(type)) {
             visit((Extension) hasSemantics);
-        } else if (SpecificAssetID.class.isAssignableFrom(type)) {
-            visit((SpecificAssetID) hasSemantics);
+//        } else if (SpecificAssetID.class.isAssignableFrom(type)) {
+//            visit((SpecificAssetID) hasSemantics);
         } else if (Submodel.class.isAssignableFrom(type)) {
             visit((Submodel) hasSemantics);
         } else if (SubmodelElement.class.isAssignableFrom(type)) {
@@ -232,7 +234,9 @@ public interface AssetAdministrationShellElementVisitor {
 
 	public default void visit(DataSpecificationContent dataSpecificationContent) {
 	}
-
+	public default void visit(EmbeddedDataSpecification embeddedDataSpecification) {
+		
+	}
     public default void visit(Entity entity) {
     }
 
@@ -245,12 +249,14 @@ public interface AssetAdministrationShellElementVisitor {
     public default void visit(File file) {
     }
 
-    public default void visit(SpecificAssetID identifierKeyValuePair) {
+    public default void visit(SpecificAssetId identifierKeyValuePair) {
     }
 
     public default void visit(Key key) {
     }
-
+    public default void visit(LangString langString) {
+    	
+    }
     public default void visit(LangStringNameType langString) {
     }
 

@@ -14,13 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.DataTypeDefXSD;
-import org.eclipse.digitaltwin.aas4j.v3.model.Qualifier;
-import org.eclipse.digitaltwin.aas4j.v3.model.QualifierKind;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class QualifierBuilder<T extends Qualifier, B extends QualifierBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
@@ -58,13 +55,13 @@ public abstract class QualifierBuilder<T extends Qualifier, B extends QualifierB
     }
 
     /**
-     * This function allows setting a value for valueID
+     * This function allows setting a value for valueId
      * 
-     * @param valueID desired value to be set
-     * @return Builder object with new value for valueID
+     * @param valueId desired value to be set
+     * @return Builder object with new value for valueId
      */
-    public B valueID(Reference valueID) {
-        getBuildingInstance().setValueID(valueID);
+    public B valueId(Reference valueId) {
+        getBuildingInstance().setValueId(valueId);
         return getSelf();
     }
 
@@ -74,19 +71,19 @@ public abstract class QualifierBuilder<T extends Qualifier, B extends QualifierB
      * @param valueType desired value to be set
      * @return Builder object with new value for valueType
      */
-    public B valueType(DataTypeDefXSD valueType) {
+    public B valueType(DataTypeDefXsd valueType) {
         getBuildingInstance().setValueType(valueType);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for semanticID
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticID desired value to be set
-     * @return Builder object with new value for semanticID
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public B semanticID(Reference semanticID) {
-        getBuildingInstance().setSemanticID(semanticID);
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 

@@ -14,11 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * The value of a qualifiable element may be further qualified by one or more qualifiers.
@@ -32,17 +33,17 @@ public interface Qualifiable {
     /**
      * Additional qualification of a qualifiable element.
      *
-     * More information under https://admin-shell.io/aas/3/0/Qualifiable/qualifiers
+     * More information under https://admin-shell.io/aas/3/0/Qualifiable/qualifier
      *
      * @return Returns the List of Qualifiers for the property qualifiers.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Qualifiable/qualifiers")
+    @IRI("https://admin-shell.io/aas/3/0/Qualifiable/qualifier")
     List<Qualifier> getQualifiers();
 
     /**
      * Additional qualification of a qualifiable element.
      *
-     * More information under https://admin-shell.io/aas/3/0/Qualifiable/qualifiers
+     * More information under https://admin-shell.io/aas/3/0/Qualifiable/qualifier
      *
      * @param qualifiers desired value for the property qualifiers.
      */

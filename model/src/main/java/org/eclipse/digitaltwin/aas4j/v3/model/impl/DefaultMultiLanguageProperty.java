@@ -14,14 +14,13 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.*;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.MultiLanguagePropertyBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package org.eclipse.digitaltwin.aas4j.v3.model.MultiLanguageProperty
@@ -32,53 +31,55 @@ import java.util.Objects;
 @IRI("aas:MultiLanguageProperty")
 public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
-    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecifications")
+    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extensions")
+    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extension")
     protected List<Extension> extensions = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticID")
-    protected Reference semanticID;
+    @IRI("https://admin-shell.io/aas/3/0/HasSemantics/semanticId")
+    protected Reference semanticId;
 
     @IRI("https://admin-shell.io/aas/3/0/HasSemantics/supplementalSemanticIds")
     protected List<Reference> supplementalSemanticIds = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/MultiLanguageProperty/value")
-    protected List<LangStringTextType> value = new ArrayList<>();
+    protected List<LangString> values = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueID")
-    protected Reference valueID;
+    @IRI("https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueId")
+    protected Reference valueId;
 
-    @IRI("https://admin-shell.io/aas/3/0/Qualifiable/qualifiers")
+    @IRI("https://admin-shell.io/aas/3/0/Qualifiable/qualifier")
     protected List<Qualifier> qualifiers = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/category")
     protected String category;
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/description")
-    protected List<LangStringTextType> description = new ArrayList<>();
+    protected List<LangString> descriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/displayName")
-    protected List<LangStringNameType> displayName = new ArrayList<>();
+    protected List<LangString> displayNames = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/idShort")
     protected String idShort;
 
     public DefaultMultiLanguageProperty() {
 
+        this.category = "VARIABLE";
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.value,
-            this.valueID,
+        return Objects.hash(this.values,
+            this.valueId,
             this.embeddedDataSpecifications,
-            this.semanticID,
+            this.semanticId,
             this.supplementalSemanticIds,
             this.category,
-            this.description,
-            this.displayName,
+            this.descriptions,
+            this.displayNames,
             this.idShort,
             this.extensions,
             this.qualifiers);
@@ -94,14 +95,14 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
             return false;
         } else {
             DefaultMultiLanguageProperty other = (DefaultMultiLanguageProperty) obj;
-            return Objects.equals(this.value, other.value) &&
-                Objects.equals(this.valueID, other.valueID) &&
+            return Objects.equals(this.values, other.values) &&
+                Objects.equals(this.valueId, other.valueId) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
-                Objects.equals(this.semanticID, other.semanticID) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.supplementalSemanticIds, other.supplementalSemanticIds) &&
                 Objects.equals(this.category, other.category) &&
-                Objects.equals(this.description, other.description) &&
-                Objects.equals(this.displayName, other.displayName) &&
+                Objects.equals(this.descriptions, other.descriptions) &&
+                Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.extensions, other.extensions) &&
                 Objects.equals(this.qualifiers, other.qualifiers);
@@ -109,23 +110,23 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     }
 
     @Override
-    public List<LangStringTextType> getValue() {
-        return value;
+    public List<LangString> getValues() {
+        return values;
     }
 
     @Override
-    public void setValue(List<LangStringTextType> value) {
-        this.value = value;
+    public void setValues(List<LangString> values) {
+        this.values = values;
     }
 
     @Override
-    public Reference getValueID() {
-        return valueID;
+    public Reference getValueId() {
+        return valueId;
     }
 
     @Override
-    public void setValueID(Reference valueID) {
-        this.valueID = valueID;
+    public void setValueId(Reference valueId) {
+        this.valueId = valueId;
     }
 
     @Override
@@ -139,13 +140,13 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     }
 
     @Override
-    public Reference getSemanticID() {
-        return semanticID;
+    public Reference getSemanticId() {
+        return semanticId;
     }
 
     @Override
-    public void setSemanticID(Reference semanticID) {
-        this.semanticID = semanticID;
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override
@@ -169,23 +170,23 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     }
 
     @Override
-    public List<LangStringTextType> getDescription() {
-        return description;
+    public List<LangString> getDescriptions() {
+        return descriptions;
     }
 
     @Override
-    public void setDescription(List<LangStringTextType> description) {
-        this.description = description;
+    public void setDescriptions(List<LangString> descriptions) {
+        this.descriptions = descriptions;
     }
 
     @Override
-    public List<LangStringNameType> getDisplayName() {
-        return displayName;
+    public List<LangString> getDisplayNames() {
+        return displayNames;
     }
 
     @Override
-    public void setDisplayName(List<LangStringNameType> displayName) {
-        this.displayName = displayName;
+    public void setDisplayNames(List<LangString> displayNames) {
+        this.displayNames = displayNames;
     }
 
     @Override

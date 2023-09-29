@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultSubmodel;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A submodel defines a specific aspect of the asset represented by the AAS.
@@ -32,17 +32,17 @@ public interface Submodel extends HasDataSpecification, Identifiable, HasSemanti
     /**
      * A submodel consists of zero or more submodel elements.
      *
-     * More information under https://admin-shell.io/aas/3/0/Submodel/submodelElements
+     * More information under https://admin-shell.io/aas/3/0/Submodel/submodelElement
      *
      * @return Returns the List of SubmodelElements for the property submodelElements.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Submodel/submodelElements")
+    @IRI("https://admin-shell.io/aas/3/0/Submodel/submodelElement")
     List<SubmodelElement> getSubmodelElements();
 
     /**
      * A submodel consists of zero or more submodel elements.
      *
-     * More information under https://admin-shell.io/aas/3/0/Submodel/submodelElements
+     * More information under https://admin-shell.io/aas/3/0/Submodel/submodelElement
      *
      * @param submodelElements desired value for the property submodelElements.
      */

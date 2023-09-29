@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Enumeration for denoting whether an entity is a self-managed entity or a co-managed entity.
@@ -30,13 +29,33 @@ public enum EntityType {
      * self-managed entity.
      */
     @IRI("https://admin-shell.io/aas/3/0/EntityType/CoManagedEntity")
-    CO_MANAGED_ENTITY,
+    CO_MANAGED_ENTITY("CoManagedEntity"),
 
     /**
      * Self-Managed Entities have their own AAS but can be part of the bill of material of a composite
      * self-managed entity.
      */
     @IRI("https://admin-shell.io/aas/3/0/EntityType/SelfManagedEntity")
-    SELF_MANAGED_ENTITY;
+    SELF_MANAGED_ENTITY("SelfManagedEntity");
+
+    private String value;
+
+    EntityType(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static EntityType fromValue(String text) {
+        for (EntityType b : EntityType.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

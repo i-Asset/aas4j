@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Reference types
@@ -29,12 +28,32 @@ public enum ReferenceTypes {
      * External reference.
      */
     @IRI("https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference")
-    EXTERNAL_REFERENCE,
+    EXTERNAL_REFERENCE("ExternalReference"),
 
     /**
      * Model reference.
      */
     @IRI("https://admin-shell.io/aas/3/0/ReferenceTypes/ModelReference")
-    MODEL_REFERENCE;
+    MODEL_REFERENCE("ModelReference");
+
+    private String value;
+
+    ReferenceTypes(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static ReferenceTypes fromValue(String text) {
+        for (ReferenceTypes b : ReferenceTypes.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

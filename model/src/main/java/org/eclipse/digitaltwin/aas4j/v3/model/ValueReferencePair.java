@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultValueReferencePair;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A value reference pair within a value list. Each value has a global unique id defining its
@@ -30,7 +29,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultValueReferencePair;
 public interface ValueReferencePair {
 
     /**
-     * The value of the referenced concept definition of the value in 'valueID'.
+     * The value of the referenced concept definition of the value in 'valueId'.
      *
      * More information under https://admin-shell.io/aas/3/0/ValueReferencePair/value
      *
@@ -40,7 +39,7 @@ public interface ValueReferencePair {
     String getValue();
 
     /**
-     * The value of the referenced concept definition of the value in 'valueID'.
+     * The value of the referenced concept definition of the value in 'valueId'.
      *
      * More information under https://admin-shell.io/aas/3/0/ValueReferencePair/value
      *
@@ -51,20 +50,20 @@ public interface ValueReferencePair {
     /**
      * Global unique id of the value.
      *
-     * More information under https://admin-shell.io/aas/3/0/ValueReferencePair/valueID
+     * More information under https://admin-shell.io/aas/3/0/ValueReferencePair/valueId
      *
-     * @return Returns the Reference for the property valueID.
+     * @return Returns the Reference for the property valueId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/ValueReferencePair/valueID")
-    Reference getValueID();
+    @IRI("https://admin-shell.io/aas/3/0/ValueReferencePair/valueId")
+    Reference getValueId();
 
     /**
      * Global unique id of the value.
      *
-     * More information under https://admin-shell.io/aas/3/0/ValueReferencePair/valueID
+     * More information under https://admin-shell.io/aas/3/0/ValueReferencePair/valueId
      *
-     * @param valueID desired value for the property valueID.
+     * @param valueId desired value for the property valueId.
      */
-    void setValueID(Reference valueID);
+    void setValueId(Reference valueId);
 
 }

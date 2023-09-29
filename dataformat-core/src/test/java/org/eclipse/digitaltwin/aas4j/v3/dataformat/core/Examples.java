@@ -16,7 +16,7 @@
 package org.eclipse.digitaltwin.aas4j.v3.dataformat.core;
 
 import org.eclipse.digitaltwin.aas4j.v3.model.AssetKind;
-import org.eclipse.digitaltwin.aas4j.v3.model.DataTypeDefXSD;
+import org.eclipse.digitaltwin.aas4j.v3.model.DataTypeDefXsd;
 import org.eclipse.digitaltwin.aas4j.v3.model.Environment;
 import org.eclipse.digitaltwin.aas4j.v3.model.KeyTypes;
 import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceTypes;
@@ -24,20 +24,21 @@ import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultAssetAdministrationShe
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultAssetInformation;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultEnvironment;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultExtension;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultExternalReference;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultKey;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultReference;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultModelReference;
 
 public class Examples {
     
     public static final Environment EXTENSION_MINIMAL = new DefaultEnvironment.Builder()
             .assetAdministrationShells(new DefaultAssetAdministrationShell.Builder()
                     .id("something_142922d6")
-                    .extensions(new DefaultExtension.Builder()
+                    .extension(new DefaultExtension.Builder()
                             .name("something_aae6caf4")
                             .build())
                     .assetInformation(new DefaultAssetInformation.Builder()
                             .assetKind(AssetKind.NOT_APPLICABLE)
-                            .globalAssetID("something_eea66fa1")
+                            .globalAssetId("something_eea66fa1")
                             .build())
                     .build())
             .build();
@@ -45,35 +46,35 @@ public class Examples {
     public static final Environment EXTENSION_MAXIMAL = new DefaultEnvironment.Builder()
             .assetAdministrationShells(new DefaultAssetAdministrationShell.Builder()
                     .id("something_142922d6")
-                    .extensions(new DefaultExtension.Builder()
+                    .extension(new DefaultExtension.Builder()
                             .name("something_aae6caf4")
                             .value("10233")
-                            .valueType(DataTypeDefXSD.UNSIGNED_SHORT)
-                            .refersTo(new DefaultReference.Builder()
-                                    .keys(new DefaultKey.Builder()
+                            .valueType(DataTypeDefXsd.UNSIGNED_SHORT)
+                            .refersTo(new DefaultModelReference.Builder()
+                                    .key(new DefaultKey.Builder()
                                             .type(KeyTypes.SUBMODEL)
                                             .value("urn:another-example01:f7faa581")
                                             .build())
-                                    .type(ReferenceTypes.MODEL_REFERENCE)
+//                                    .type(ReferenceTypes.MODEL_REFERENCE)
                                     .build())
-                            .semanticID(new DefaultReference.Builder()
-                                    .keys(new DefaultKey.Builder()
+                            .semanticId(new DefaultExternalReference.Builder()
+                                    .key(new DefaultKey.Builder()
                                             .type(KeyTypes.GLOBAL_REFERENCE)
                                             .value("urn:another-company07:4d1bd2cb")
                                             .build())
-                                    .type(ReferenceTypes.EXTERNAL_REFERENCE)
+//                                    .type(ReferenceTypes.EXTERNAL_REFERENCE)
                                     .build())
-                            .supplementalSemanticIds(new DefaultReference.Builder()
-                                    .keys(new DefaultKey.Builder()
+                            .supplementalSemanticIds(new DefaultExternalReference.Builder()
+                                    .key(new DefaultKey.Builder()
                                             .type(KeyTypes.GLOBAL_REFERENCE)
                                             .value("urn:an-example13:be48ff29")
                                             .build())
-                                    .type(ReferenceTypes.EXTERNAL_REFERENCE)
+//                                    .type(ReferenceTypes.EXTERNAL_REFERENCE)
                                     .build())
                             .build())
                     .assetInformation(new DefaultAssetInformation.Builder()
                             .assetKind(AssetKind.NOT_APPLICABLE)
-                            .globalAssetID("something_eea66fa1")
+                            .globalAssetId("something_eea66fa1")
                             .build())
                     .build())
             .build();

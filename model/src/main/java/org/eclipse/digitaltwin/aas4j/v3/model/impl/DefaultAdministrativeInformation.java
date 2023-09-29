@@ -14,16 +14,13 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.impl;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.AdministrativeInformation;
-import org.eclipse.digitaltwin.aas4j.v3.model.EmbeddedDataSpecification;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.AdministrativeInformationBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package
@@ -41,13 +38,13 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     @IRI("https://admin-shell.io/aas/3/0/AdministrativeInformation/revision")
     protected String revision;
 
-    @IRI("https://admin-shell.io/aas/3/0/AdministrativeInformation/templateID")
-    protected String templateID;
+    @IRI("https://admin-shell.io/aas/3/0/AdministrativeInformation/templateId")
+    protected String templateId;
 
     @IRI("https://admin-shell.io/aas/3/0/AdministrativeInformation/version")
     protected String version;
 
-    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecifications")
+    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
     public DefaultAdministrativeInformation() {
@@ -58,7 +55,7 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     public int hashCode() {
         return Objects.hash(this.creator,
             this.revision,
-            this.templateID,
+            this.templateId,
             this.version,
             this.embeddedDataSpecifications);
     }
@@ -75,7 +72,7 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
             DefaultAdministrativeInformation other = (DefaultAdministrativeInformation) obj;
             return Objects.equals(this.creator, other.creator) &&
                 Objects.equals(this.revision, other.revision) &&
-                Objects.equals(this.templateID, other.templateID) &&
+                Objects.equals(this.templateId, other.templateId) &&
                 Objects.equals(this.version, other.version) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications);
         }
@@ -102,13 +99,13 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     }
 
     @Override
-    public String getTemplateID() {
-        return templateID;
+    public String getTemplateId() {
+        return templateId;
     }
 
     @Override
-    public void setTemplateID(String templateID) {
-        this.templateID = templateID;
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
     }
 
     @Override

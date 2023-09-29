@@ -15,10 +15,17 @@
  */
 package org.eclipse.digitaltwin.aas4j.v3.dataformat.core;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.*;
-
 import java.util.List;
 import java.util.Objects;
+
+import org.eclipse.digitaltwin.aas4j.v3.model.DataTypeDefXsd;
+import org.eclipse.digitaltwin.aas4j.v3.model.EmbeddedDataSpecification;
+import org.eclipse.digitaltwin.aas4j.v3.model.Extension;
+import org.eclipse.digitaltwin.aas4j.v3.model.LangString;
+import org.eclipse.digitaltwin.aas4j.v3.model.ModellingKind;
+import org.eclipse.digitaltwin.aas4j.v3.model.Property;
+import org.eclipse.digitaltwin.aas4j.v3.model.Qualifier;
+import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
 
 
 public class CustomProperty implements Property {
@@ -35,15 +42,15 @@ public class CustomProperty implements Property {
 
 	protected Reference valueId;
 
-	protected DataTypeDefXSD valueType;
+	protected DataTypeDefXsd valueType;
 
 	protected List<Qualifier> qualifiers;
 
 	protected String category;
 
-	protected List<LangStringTextType> description;
+	protected List<LangString> description;
 
-	protected List<LangStringNameType> displayName;
+	protected List<LangString> displayName;
 
 	protected String idShort;
 
@@ -82,12 +89,12 @@ public class CustomProperty implements Property {
 	}
 
 	@Override
-	final public DataTypeDefXSD getValueType() {
+	final public DataTypeDefXsd getValueType() {
 		return this.valueType;
 	}
 
 	@Override
-	final public void setValueType(DataTypeDefXSD dataType) {
+	final public void setValueType(DataTypeDefXsd dataType) {
 		this.valueType = dataType;
 	}
 
@@ -102,12 +109,12 @@ public class CustomProperty implements Property {
 	}
 
 	@Override
-	final public Reference getValueID() {
+	final public Reference getValueId() {
 		return valueId;
 	}
 
 	@Override
-	final public void setValueID(Reference valueId) {
+	final public void setValueId(Reference valueId) {
 		this.valueId = valueId;
 	}
 
@@ -122,22 +129,22 @@ public class CustomProperty implements Property {
 	}
 
 	@Override
-	final public List<LangStringTextType> getDescription() {
+	final public List<LangString> getDescriptions() {
 		return description;
 	}
 
 	@Override
-	final public void setDescription(List<LangStringTextType> description) {
+	final public void setDescriptions(List<LangString> description) {
 		this.description = description;
 	}
 
 	@Override
-	final public List<LangStringNameType> getDisplayName() {
+	final public List<LangString> getDisplayNames() {
 		return displayName;
 	}
 
 	@Override
-	final public void setDisplayName(List<LangStringNameType> displayName) {
+	final public void setDisplayNames(List<LangString> displayName) {
 		this.displayName = displayName;
 	}
 
@@ -172,12 +179,12 @@ public class CustomProperty implements Property {
 	}
 
 	@Override
-	final public Reference getSemanticID() {
+	final public Reference getSemanticId() {
 		return semanticId;
 	}
 
 	@Override
-	final public void setSemanticID(Reference semanticId) {
+	final public void setSemanticId(Reference semanticId) {
 		this.semanticId = semanticId;
 	}
 

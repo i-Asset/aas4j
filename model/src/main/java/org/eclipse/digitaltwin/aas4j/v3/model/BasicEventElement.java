@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultBasicEventElement;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A basic event element.
@@ -92,10 +91,10 @@ public interface BasicEventElement extends EventElement {
      *
      * More information under https://admin-shell.io/aas/3/0/BasicEventElement/messageBroker
      *
-     * @return Returns the Reference for the property messageBroker.
+     * @return Returns the ModelReference for the property messageBroker.
      */
     @IRI("https://admin-shell.io/aas/3/0/BasicEventElement/messageBroker")
-    Reference getMessageBroker();
+    ModelReference getMessageBroker();
 
     /**
      * Information, which outer message infrastructure shall handle messages for the 'EventElement'.
@@ -106,7 +105,7 @@ public interface BasicEventElement extends EventElement {
      *
      * @param messageBroker desired value for the property messageBroker.
      */
-    void setMessageBroker(Reference messageBroker);
+    void setMessageBroker(ModelReference messageBroker);
 
     /**
      * Information for the outer message infrastructure for scheduling the event to the respective
@@ -156,10 +155,10 @@ public interface BasicEventElement extends EventElement {
      *
      * More information under https://admin-shell.io/aas/3/0/BasicEventElement/observed
      *
-     * @return Returns the Reference for the property observed.
+     * @return Returns the ModelReference for the property observed.
      */
     @IRI("https://admin-shell.io/aas/3/0/BasicEventElement/observed")
-    Reference getObserved();
+    ModelReference getObserved();
 
     /**
      * Reference to the 'Referable', which defines the scope of the event. Can be
@@ -169,7 +168,7 @@ public interface BasicEventElement extends EventElement {
      *
      * @param observed desired value for the property observed.
      */
-    void setObserved(Reference observed);
+    void setObserved(ModelReference observed);
 
     /**
      * State of event.

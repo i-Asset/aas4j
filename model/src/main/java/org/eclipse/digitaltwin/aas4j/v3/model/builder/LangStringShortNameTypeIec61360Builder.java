@@ -14,9 +14,8 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-
-import org.eclipse.digitaltwin.aas4j.v3.model.LangStringShortNameTypeIec61360;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class LangStringShortNameTypeIec61360Builder<T extends LangStringShortNameTypeIec61360, B extends LangStringShortNameTypeIec61360Builder<T, B>>
     extends ExtendableBuilder<T, B> {

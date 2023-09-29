@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * State of an event
@@ -29,12 +28,32 @@ public enum StateOfEvent {
      * Event is off.
      */
     @IRI("https://admin-shell.io/aas/3/0/StateOfEvent/Off")
-    OFF,
+    OFF("Off"),
 
     /**
      * Event is on
      */
     @IRI("https://admin-shell.io/aas/3/0/StateOfEvent/On")
-    ON;
+    ON("On");
+
+    private String value;
+
+    StateOfEvent(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static StateOfEvent fromValue(String text) {
+        for (StateOfEvent b : StateOfEvent.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

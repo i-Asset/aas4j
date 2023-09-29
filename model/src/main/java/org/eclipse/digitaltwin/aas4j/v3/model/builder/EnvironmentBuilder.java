@@ -14,13 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.AssetAdministrationShell;
-import org.eclipse.digitaltwin.aas4j.v3.model.ConceptDescription;
-import org.eclipse.digitaltwin.aas4j.v3.model.Environment;
-import org.eclipse.digitaltwin.aas4j.v3.model.Submodel;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class EnvironmentBuilder<T extends Environment, B extends EnvironmentBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
@@ -60,11 +57,11 @@ public abstract class EnvironmentBuilder<T extends Environment, B extends Enviro
     /**
      * This function allows adding a value to the List conceptDescriptions
      * 
-     * @param conceptDescriptions desired value to be added
+     * @param conceptDescription desired value to be added
      * @return Builder object with new value for conceptDescriptions
      */
-    public B conceptDescriptions(ConceptDescription conceptDescriptions) {
-        getBuildingInstance().getConceptDescriptions().add(conceptDescriptions);
+    public B conceptDescription(ConceptDescription conceptDescription) {
+        getBuildingInstance().getConceptDescriptions().add(conceptDescription);
         return getSelf();
     }
 
@@ -82,11 +79,11 @@ public abstract class EnvironmentBuilder<T extends Environment, B extends Enviro
     /**
      * This function allows adding a value to the List submodels
      * 
-     * @param submodels desired value to be added
+     * @param submodel desired value to be added
      * @return Builder object with new value for submodels
      */
-    public B submodels(Submodel submodels) {
-        getBuildingInstance().getSubmodels().add(submodels);
+    public B submodel(Submodel submodel) {
+        getBuildingInstance().getSubmodels().add(submodel);
         return getSelf();
     }
 }

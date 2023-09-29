@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * An element that has a globally unique identifier.
@@ -26,7 +25,8 @@ import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = AssetAdministrationShell.class),
     @KnownSubtypes.Type(value = ConceptDescription.class),
-    @KnownSubtypes.Type(value = Submodel.class)
+    @KnownSubtypes.Type(value = Submodel.class),
+    @KnownSubtypes.Type(value = Descriptor.class)
 })
 public interface Identifiable extends Referable {
 

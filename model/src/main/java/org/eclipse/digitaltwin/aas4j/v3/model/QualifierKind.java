@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Enumeration for kinds of qualifiers.
@@ -26,21 +25,41 @@ import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 public enum QualifierKind {
 
     /**
-     * qualifies the semantic definition the element is referring to ('semanticID')
+     * qualifies the semantic definition the element is referring to ('semanticId')
      */
     @IRI("https://admin-shell.io/aas/3/0/QualifierKind/ConceptQualifier")
-    CONCEPT_QUALIFIER,
+    CONCEPT_QUALIFIER("ConceptQualifier"),
 
     /**
      * qualifies the elements within a specific submodel on concept level.
      */
     @IRI("https://admin-shell.io/aas/3/0/QualifierKind/TemplateQualifier")
-    TEMPLATE_QUALIFIER,
+    TEMPLATE_QUALIFIER("TemplateQualifier"),
 
     /**
      * qualifies the value of the element and can change during run-time.
      */
     @IRI("https://admin-shell.io/aas/3/0/QualifierKind/ValueQualifier")
-    VALUE_QUALIFIER;
+    VALUE_QUALIFIER("ValueQualifier");
+
+    private String value;
+
+    QualifierKind(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static QualifierKind fromValue(String text) {
+        for (QualifierKind b : QualifierKind.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

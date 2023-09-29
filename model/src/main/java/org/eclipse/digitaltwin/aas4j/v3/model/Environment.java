@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultEnvironment;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Container for the sets of different identifiables.
@@ -51,17 +51,17 @@ public interface Environment {
     /**
      * Concept description
      *
-     * More information under https://admin-shell.io/aas/3/0/Environment/conceptDescriptions
+     * More information under https://admin-shell.io/aas/3/0/Environment/conceptDescription
      *
      * @return Returns the List of ConceptDescriptions for the property conceptDescriptions.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Environment/conceptDescriptions")
+    @IRI("https://admin-shell.io/aas/3/0/Environment/conceptDescription")
     List<ConceptDescription> getConceptDescriptions();
 
     /**
      * Concept description
      *
-     * More information under https://admin-shell.io/aas/3/0/Environment/conceptDescriptions
+     * More information under https://admin-shell.io/aas/3/0/Environment/conceptDescription
      *
      * @param conceptDescriptions desired value for the property conceptDescriptions.
      */
@@ -70,17 +70,17 @@ public interface Environment {
     /**
      * Submodel
      *
-     * More information under https://admin-shell.io/aas/3/0/Environment/submodels
+     * More information under https://admin-shell.io/aas/3/0/Environment/submodel
      *
      * @return Returns the List of Submodels for the property submodels.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Environment/submodels")
+    @IRI("https://admin-shell.io/aas/3/0/Environment/submodel")
     List<Submodel> getSubmodels();
 
     /**
      * Submodel
      *
-     * More information under https://admin-shell.io/aas/3/0/Environment/submodels
+     * More information under https://admin-shell.io/aas/3/0/Environment/submodel
      *
      * @param submodels desired value for the property submodels.
      */

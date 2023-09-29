@@ -14,10 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.*;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
@@ -35,11 +35,11 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     /**
      * This function allows adding a value to the List submodelElements
      * 
-     * @param submodelElements desired value to be added
+     * @param submodelElement desired value to be added
      * @return Builder object with new value for submodelElements
      */
-    public B submodelElements(SubmodelElement submodelElements) {
-        getBuildingInstance().getSubmodelElements().add(submodelElements);
+    public B submodelElement(SubmodelElement submodelElement) {
+        getBuildingInstance().getSubmodelElements().add(submodelElement);
         return getSelf();
     }
 
@@ -57,11 +57,11 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     /**
      * This function allows adding a value to the List embeddedDataSpecifications
      * 
-     * @param embeddedDataSpecifications desired value to be added
+     * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public B embeddedDataSpecifications(EmbeddedDataSpecification embeddedDataSpecifications) {
-        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecifications);
+    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
+        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
         return getSelf();
     }
 
@@ -99,46 +99,46 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     }
 
     /**
-     * This function allows setting a value for description
+     * This function allows setting a value for descriptions
      * 
-     * @param description desired value to be set
-     * @return Builder object with new value for description
+     * @param descriptions desired value to be set
+     * @return Builder object with new value for descriptions
      */
-    public B description(List<LangStringTextType> description) {
-        getBuildingInstance().setDescription(description);
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List description
+     * This function allows adding a value to the List descriptions
      * 
      * @param description desired value to be added
-     * @return Builder object with new value for description
+     * @return Builder object with new value for descriptions
      */
-    public B description(LangStringTextType description) {
-        getBuildingInstance().getDescription().add(description);
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for displayName
+     * This function allows setting a value for displayNames
      * 
-     * @param displayName desired value to be set
-     * @return Builder object with new value for displayName
+     * @param displayNames desired value to be set
+     * @return Builder object with new value for displayNames
      */
-    public B displayName(List<LangStringNameType> displayName) {
-        getBuildingInstance().setDisplayName(displayName);
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List displayName
+     * This function allows adding a value to the List displayNames
      * 
      * @param displayName desired value to be added
-     * @return Builder object with new value for displayName
+     * @return Builder object with new value for displayNames
      */
-    public B displayName(LangStringNameType displayName) {
-        getBuildingInstance().getDisplayName().add(displayName);
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
         return getSelf();
     }
 
@@ -167,22 +167,22 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     /**
      * This function allows adding a value to the List extensions
      * 
-     * @param extensions desired value to be added
+     * @param extension desired value to be added
      * @return Builder object with new value for extensions
      */
-    public B extensions(Extension extensions) {
-        getBuildingInstance().getExtensions().add(extensions);
+    public B extension(Extension extension) {
+        getBuildingInstance().getExtensions().add(extension);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for semanticID
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticID desired value to be set
-     * @return Builder object with new value for semanticID
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public B semanticID(Reference semanticID) {
-        getBuildingInstance().setSemanticID(semanticID);
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 
@@ -233,11 +233,11 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     /**
      * This function allows adding a value to the List qualifiers
      * 
-     * @param qualifiers desired value to be added
+     * @param qualifier desired value to be added
      * @return Builder object with new value for qualifiers
      */
-    public B qualifiers(Qualifier qualifiers) {
-        getBuildingInstance().getQualifiers().add(qualifiers);
+    public B qualifier(Qualifier qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
         return getSelf();
     }
 }

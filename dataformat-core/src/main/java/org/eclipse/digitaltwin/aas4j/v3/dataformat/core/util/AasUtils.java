@@ -71,7 +71,7 @@ public class AasUtils {
 		if (reference == null) {
 			return null;
 		}
-		return String.format("[%s]%s", reference.getType(),
+		return String.format("[%s]%s", reference.getClass().getName(),
 				reference.getKeys().stream().map(x -> String.format("(%s)%s", EnumSerializer.serializeEnumName(x.getType().name()), x.getValue())).collect(Collectors.joining(REFERENCE_ELEMENT_DELIMITER)));
 	}
 
@@ -86,7 +86,7 @@ public class AasUtils {
     public static Reference toReference(Identifiable identifiable, Class<? extends Reference> referenceType, Class<? extends Key> keyType) {
         try {
             Reference reference = referenceType.getConstructor().newInstance();
-            reference.setType(ReferenceTypes.MODEL_REFERENCE);
+//            reference.setType(ReferenceTypes.MODEL_REFERENCE);
             Key key = keyType.getConstructor().newInstance();
             key.setType(referableToKeyType(identifiable));
             key.setValue(identifiable.getId());
@@ -240,7 +240,7 @@ public class AasUtils {
         try {
             Reference result = referenceType.getConstructor().newInstance();
             List<Key> newKeys = new ArrayList<>();
-            result.setType(reference.getType());
+//            result.setType(reference.getType());
             for (Key key : reference.getKeys()) {
                 Key newKey = keyType.getConstructor().newInstance();
                 newKey.setType(key.getType());
@@ -331,14 +331,14 @@ public class AasUtils {
             if (keyType != null) {
                 if (SubmodelElementList.class.isAssignableFrom(current.getClass())) {
                     try {
-                        current = ((SubmodelElementList) current).getValue().get(Integer.parseInt(key.getValue()));
+                        current = ((SubmodelElementList) current).getValues().get(Integer.parseInt(key.getValue()));
                     } catch (NumberFormatException ex) {
                         throw new IllegalArgumentException(String.format("invalid value for key with index %d, expected integer values >= 0, but found '%s'",
                                 i, key.getValue()));
                     } catch (IndexOutOfBoundsException ex) {
                         throw new IllegalArgumentException(String.format("index out of bounds exception for key with index %d, expected integer values >= 0 and < %d, but found '%s'",
                                 i,
-                                ((SubmodelElementList) current).getValue().size(),
+                                ((SubmodelElementList) current).getValues().size(),
                                 key.getValue()));
                     }
                 } else {

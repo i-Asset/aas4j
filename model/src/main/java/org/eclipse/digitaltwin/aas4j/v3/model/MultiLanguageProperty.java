@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultMultiLanguageProperty;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A property is a data element that has a multi-language value.
@@ -34,37 +34,37 @@ public interface MultiLanguageProperty extends DataElement {
      *
      * More information under https://admin-shell.io/aas/3/0/MultiLanguageProperty/value
      *
-     * @return Returns the List of LangStringTextTypes for the property value.
+     * @return Returns the List of LangStrings for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/MultiLanguageProperty/value")
-    List<LangStringTextType> getValue();
+    List<LangString> getValues();
 
     /**
      * The value of the property instance.
      *
      * More information under https://admin-shell.io/aas/3/0/MultiLanguageProperty/value
      *
-     * @param value desired value for the property value.
+     * @param values desired value for the property values.
      */
-    void setValue(List<LangStringTextType> value);
+    void setValues(List<LangString> values);
 
     /**
      * Reference to the global unique ID of a coded value.
      *
-     * More information under https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueID
+     * More information under https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueId
      *
-     * @return Returns the Reference for the property valueID.
+     * @return Returns the Reference for the property valueId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueID")
-    Reference getValueID();
+    @IRI("https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueId")
+    Reference getValueId();
 
     /**
      * Reference to the global unique ID of a coded value.
      *
-     * More information under https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueID
+     * More information under https://admin-shell.io/aas/3/0/MultiLanguageProperty/valueId
      *
-     * @param valueID desired value for the property valueID.
+     * @param valueId desired value for the property valueId.
      */
-    void setValueID(Reference valueID);
+    void setValueId(Reference valueId);
 
 }

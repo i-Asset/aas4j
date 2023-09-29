@@ -18,17 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.AdministrativeInformation;
-import org.eclipse.digitaltwin.aas4j.v3.model.AssetAdministrationShell;
-import org.eclipse.digitaltwin.aas4j.v3.model.AssetInformation;
-import org.eclipse.digitaltwin.aas4j.v3.model.EmbeddedDataSpecification;
-import org.eclipse.digitaltwin.aas4j.v3.model.Extension;
-import org.eclipse.digitaltwin.aas4j.v3.model.LangStringNameType;
-import org.eclipse.digitaltwin.aas4j.v3.model.LangStringTextType;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.builder.AssetAdministrationShellBuilder;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 
 /**
  * Default implementation of package org.eclipse.digitaltwin.aas4j.v3.model.AssetAdministrationShell
@@ -43,15 +35,15 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     protected AssetInformation assetInformation;
 
     @IRI("https://admin-shell.io/aas/3/0/AssetAdministrationShell/derivedFrom")
-    protected Reference derivedFrom;
+    protected ModelReference derivedFrom;
 
-    @IRI("https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodels")
-    protected List<Reference> submodels = new ArrayList<>();
+    @IRI("https://admin-shell.io/aas/3/0/AssetAdministrationShell/submodel")
+    protected List<ModelReference> submodels = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecifications")
+    @IRI("https://admin-shell.io/aas/3/0/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extensions")
+    @IRI("https://admin-shell.io/aas/3/0/HasExtensions/extension")
     protected List<Extension> extensions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Identifiable/administration")
@@ -64,15 +56,16 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     protected String category;
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/description")
-    protected List<LangStringTextType> description = new ArrayList<>();
+    protected List<LangString> descriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/displayName")
-    protected List<LangStringNameType> displayName = new ArrayList<>();
+    protected List<LangString> displayNames = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/Referable/idShort")
     protected String idShort;
 
     public DefaultAssetAdministrationShell() {
+
     }
 
     @Override
@@ -84,8 +77,8 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
             this.administration,
             this.id,
             this.category,
-            this.description,
-            this.displayName,
+            this.descriptions,
+            this.displayNames,
             this.idShort,
             this.extensions);
     }
@@ -107,8 +100,8 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.id, other.id) &&
                 Objects.equals(this.category, other.category) &&
-                Objects.equals(this.description, other.description) &&
-                Objects.equals(this.displayName, other.displayName) &&
+                Objects.equals(this.descriptions, other.descriptions) &&
+                Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.extensions, other.extensions);
         }
@@ -125,22 +118,22 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     }
 
     @Override
-    public Reference getDerivedFrom() {
+    public ModelReference getDerivedFrom() {
         return derivedFrom;
     }
 
     @Override
-    public void setDerivedFrom(Reference derivedFrom) {
+    public void setDerivedFrom(ModelReference derivedFrom) {
         this.derivedFrom = derivedFrom;
     }
 
     @Override
-    public List<Reference> getSubmodels() {
+    public List<ModelReference> getSubmodels() {
         return submodels;
     }
 
     @Override
-    public void setSubmodels(List<Reference> submodels) {
+    public void setSubmodels(List<ModelReference> submodels) {
         this.submodels = submodels;
     }
 
@@ -185,23 +178,23 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     }
 
     @Override
-    public List<LangStringTextType> getDescription() {
-        return description;
+    public List<LangString> getDescriptions() {
+        return descriptions;
     }
 
     @Override
-    public void setDescription(List<LangStringTextType> description) {
-        this.description = description;
+    public void setDescriptions(List<LangString> descriptions) {
+        this.descriptions = descriptions;
     }
 
     @Override
-    public List<LangStringNameType> getDisplayName() {
-        return displayName;
+    public List<LangString> getDisplayNames() {
+        return displayNames;
     }
 
     @Override
-    public void setDisplayName(List<LangStringNameType> displayName) {
-        this.displayName = displayName;
+    public void setDisplayNames(List<LangString> displayNames) {
+        this.displayNames = displayNames;
     }
 
     @Override

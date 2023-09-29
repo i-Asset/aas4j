@@ -14,10 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.*;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 public abstract class DataSpecificationIec61360Builder<T extends DataSpecificationIec61360, B extends DataSpecificationIec61360Builder<T, B>>
     extends ExtendableBuilder<T, B> {
@@ -34,24 +34,24 @@ public abstract class DataSpecificationIec61360Builder<T extends DataSpecificati
     }
 
     /**
-     * This function allows setting a value for definition
+     * This function allows setting a value for definitions
      * 
-     * @param definition desired value to be set
-     * @return Builder object with new value for definition
+     * @param definitions desired value to be set
+     * @return Builder object with new value for definitions
      */
-    public B definition(List<LangStringDefinitionTypeIec61360> definition) {
-        getBuildingInstance().setDefinition(definition);
+    public B definitions(List<LangString> definitions) {
+        getBuildingInstance().setDefinitions(definitions);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List definition
+     * This function allows adding a value to the List definitions
      * 
      * @param definition desired value to be added
-     * @return Builder object with new value for definition
+     * @return Builder object with new value for definitions
      */
-    public B definition(LangStringDefinitionTypeIec61360 definition) {
-        getBuildingInstance().getDefinition().add(definition);
+    public B definition(LangString definition) {
+        getBuildingInstance().getDefinitions().add(definition);
         return getSelf();
     }
 
@@ -67,46 +67,46 @@ public abstract class DataSpecificationIec61360Builder<T extends DataSpecificati
     }
 
     /**
-     * This function allows setting a value for preferredName
+     * This function allows setting a value for preferredNames
      * 
-     * @param preferredName desired value to be set
-     * @return Builder object with new value for preferredName
+     * @param preferredNames desired value to be set
+     * @return Builder object with new value for preferredNames
      */
-    public B preferredName(List<LangStringPreferredNameTypeIec61360> preferredName) {
-        getBuildingInstance().setPreferredName(preferredName);
+    public B preferredNames(List<LangString> preferredNames) {
+        getBuildingInstance().setPreferredNames(preferredNames);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List preferredName
+     * This function allows adding a value to the List preferredNames
      * 
      * @param preferredName desired value to be added
-     * @return Builder object with new value for preferredName
+     * @return Builder object with new value for preferredNames
      */
-    public B preferredName(LangStringPreferredNameTypeIec61360 preferredName) {
-        getBuildingInstance().getPreferredName().add(preferredName);
+    public B preferredName(LangString preferredName) {
+        getBuildingInstance().getPreferredNames().add(preferredName);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for shortName
+     * This function allows setting a value for shortNames
      * 
-     * @param shortName desired value to be set
-     * @return Builder object with new value for shortName
+     * @param shortNames desired value to be set
+     * @return Builder object with new value for shortNames
      */
-    public B shortName(List<LangStringShortNameTypeIec61360> shortName) {
-        getBuildingInstance().setShortName(shortName);
+    public B shortNames(List<LangString> shortNames) {
+        getBuildingInstance().setShortNames(shortNames);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List shortName
+     * This function allows adding a value to the List shortNames
      * 
      * @param shortName desired value to be added
-     * @return Builder object with new value for shortName
+     * @return Builder object with new value for shortNames
      */
-    public B shortName(LangStringShortNameTypeIec61360 shortName) {
-        getBuildingInstance().getShortName().add(shortName);
+    public B shortName(LangString shortName) {
+        getBuildingInstance().getShortNames().add(shortName);
         return getSelf();
     }
 
@@ -144,13 +144,13 @@ public abstract class DataSpecificationIec61360Builder<T extends DataSpecificati
     }
 
     /**
-     * This function allows setting a value for unitID
+     * This function allows setting a value for unitId
      * 
-     * @param unitID desired value to be set
-     * @return Builder object with new value for unitID
+     * @param unitId desired value to be set
+     * @return Builder object with new value for unitId
      */
-    public B unitID(Reference unitID) {
-        getBuildingInstance().setUnitID(unitID);
+    public B unitId(Reference unitId) {
+        getBuildingInstance().setUnitId(unitId);
         return getSelf();
     }
 

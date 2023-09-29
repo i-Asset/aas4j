@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultSubmodelElementList;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A submodel element list is an ordered list of submodel elements.
@@ -53,31 +53,31 @@ public interface SubmodelElementList extends SubmodelElement {
     /**
      * Semantic ID the submodel elements contained in the list match to.
      *
-     * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/semanticIDListElement
+     * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/semanticIdListElement
      *
-     * @return Returns the Reference for the property semanticIDListElement.
+     * @return Returns the Reference for the property semanticIdListElement.
      */
-    @IRI("https://admin-shell.io/aas/3/0/SubmodelElementList/semanticIDListElement")
-    Reference getSemanticIDListElement();
+    @IRI("https://admin-shell.io/aas/3/0/SubmodelElementList/semanticIdListElement")
+    Reference getSemanticIdListElement();
 
     /**
      * Semantic ID the submodel elements contained in the list match to.
      *
-     * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/semanticIDListElement
+     * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/semanticIdListElement
      *
-     * @param semanticIDListElement desired value for the property semanticIDListElement.
+     * @param semanticIdListElement desired value for the property semanticIdListElement.
      */
-    void setSemanticIDListElement(Reference semanticIDListElement);
+    void setSemanticIdListElement(Reference semanticIdListElement);
 
     /**
      * The submodel element type of the submodel elements contained in the list.
      *
      * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/typeValueListElement
      *
-     * @return Returns the AASSubmodelElements for the property typeValueListElement.
+     * @return Returns the AasSubmodelElements for the property typeValueListElement.
      */
     @IRI("https://admin-shell.io/aas/3/0/SubmodelElementList/typeValueListElement")
-    AASSubmodelElements getTypeValueListElement();
+    AasSubmodelElements getTypeValueListElement();
 
     /**
      * The submodel element type of the submodel elements contained in the list.
@@ -86,36 +86,36 @@ public interface SubmodelElementList extends SubmodelElement {
      *
      * @param typeValueListElement desired value for the property typeValueListElement.
      */
-    void setTypeValueListElement(AASSubmodelElements typeValueListElement);
+    void setTypeValueListElement(AasSubmodelElements typeValueListElement);
 
     /**
      * Submodel element contained in the list.
      *
      * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/value
      *
-     * @return Returns the List of SubmodelElements for the property value.
+     * @return Returns the List of SubmodelElements for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/SubmodelElementList/value")
-    List<SubmodelElement> getValue();
+    List<SubmodelElement> getValues();
 
     /**
      * Submodel element contained in the list.
      *
      * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/value
      *
-     * @param value desired value for the property value.
+     * @param values desired value for the property values.
      */
-    void setValue(List<SubmodelElement> value);
+    void setValues(List<SubmodelElement> values);
 
     /**
      * The value type of the submodel element contained in the list.
      *
      * More information under https://admin-shell.io/aas/3/0/SubmodelElementList/valueTypeListElement
      *
-     * @return Returns the DataTypeDefXSD for the property valueTypeListElement.
+     * @return Returns the DataTypeDefXsd for the property valueTypeListElement.
      */
     @IRI("https://admin-shell.io/aas/3/0/SubmodelElementList/valueTypeListElement")
-    DataTypeDefXSD getValueTypeListElement();
+    DataTypeDefXsd getValueTypeListElement();
 
     /**
      * The value type of the submodel element contained in the list.
@@ -124,6 +124,6 @@ public interface SubmodelElementList extends SubmodelElement {
      *
      * @param valueTypeListElement desired value for the property valueTypeListElement.
      */
-    void setValueTypeListElement(DataTypeDefXSD valueTypeListElement);
+    void setValueTypeListElement(DataTypeDefXsd valueTypeListElement);
 
 }

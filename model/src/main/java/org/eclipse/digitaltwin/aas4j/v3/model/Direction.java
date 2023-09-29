@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Direction
@@ -29,12 +28,32 @@ public enum Direction {
      * Input direction.
      */
     @IRI("https://admin-shell.io/aas/3/0/Direction/Input")
-    INPUT,
+    INPUT("Input"),
 
     /**
      * Output direction
      */
     @IRI("https://admin-shell.io/aas/3/0/Direction/Output")
-    OUTPUT;
+    OUTPUT("Output");
+
+    private String value;
+
+    Direction(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static Direction fromValue(String text) {
+        for (Direction b : Direction.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

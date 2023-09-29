@@ -14,10 +14,9 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Enumeration of different key value types within a key.
@@ -28,132 +27,152 @@ public enum KeyTypes {
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/AnnotatedRelationshipElement")
-    ANNOTATED_RELATIONSHIP_ELEMENT,
+    ANNOTATED_RELATIONSHIP_ELEMENT("AnnotatedRelationshipElement"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/AssetAdministrationShell")
-    ASSET_ADMINISTRATION_SHELL,
+    ASSET_ADMINISTRATION_SHELL("AssetAdministrationShell"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/BasicEventElement")
-    BASIC_EVENT_ELEMENT,
+    BASIC_EVENT_ELEMENT("BasicEventElement"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Blob")
-    BLOB,
+    BLOB("Blob"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Capability")
-    CAPABILITY,
+    CAPABILITY("Capability"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/ConceptDescription")
-    CONCEPT_DESCRIPTION,
+    CONCEPT_DESCRIPTION("ConceptDescription"),
 
     /**
      * Data element.
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/DataElement")
-    DATA_ELEMENT,
+    DATA_ELEMENT("DataElement"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Entity")
-    ENTITY,
+    ENTITY("Entity"),
 
     /**
      * Event.
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/EventElement")
-    EVENT_ELEMENT,
+    EVENT_ELEMENT("EventElement"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/File")
-    FILE,
+    FILE("File"),
 
     /**
      * Bookmark or a similar local identifier of a subordinate part of a primary resource
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/FragmentReference")
-    FRAGMENT_REFERENCE,
+    FRAGMENT_REFERENCE("FragmentReference"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/GlobalReference")
-    GLOBAL_REFERENCE,
+    GLOBAL_REFERENCE("GlobalReference"),
 
     /**
      * Identifiable.
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Identifiable")
-    IDENTIFIABLE,
+    IDENTIFIABLE("Identifiable"),
 
     /**
      * Property with a value that can be provided in multiple languages
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/MultiLanguageProperty")
-    MULTI_LANGUAGE_PROPERTY,
+    MULTI_LANGUAGE_PROPERTY("MultiLanguageProperty"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Operation")
-    OPERATION,
+    OPERATION("Operation"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Property")
-    PROPERTY,
+    PROPERTY("Property"),
 
     /**
      * Range with min and max
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Range")
-    RANGE,
+    RANGE("Range"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Referable")
-    REFERABLE,
+    REFERABLE("Referable"),
 
     /**
      * Reference
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/ReferenceElement")
-    REFERENCE_ELEMENT,
+    REFERENCE_ELEMENT("ReferenceElement"),
 
     /**
      * Relationship
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/RelationshipElement")
-    RELATIONSHIP_ELEMENT,
+    RELATIONSHIP_ELEMENT("RelationshipElement"),
 
     /** 
     */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/Submodel")
-    SUBMODEL,
+    SUBMODEL("Submodel"),
 
     /**
      * Submodel Element
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/SubmodelElement")
-    SUBMODEL_ELEMENT,
+    SUBMODEL_ELEMENT("SubmodelElement"),
 
     /**
      * Struct of Submodel Elements
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/SubmodelElementCollection")
-    SUBMODEL_ELEMENT_COLLECTION,
+    SUBMODEL_ELEMENT_COLLECTION("SubmodelElementCollection"),
 
     /**
      * List of Submodel Elements
      */
     @IRI("https://admin-shell.io/aas/3/0/KeyTypes/SubmodelElementList")
-    SUBMODEL_ELEMENT_LIST;
+    SUBMODEL_ELEMENT_LIST("SubmodelElementList");
+
+    private String value;
+
+    KeyTypes(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static KeyTypes fromValue(String text) {
+        for (KeyTypes b : KeyTypes.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

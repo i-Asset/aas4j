@@ -14,12 +14,12 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultValueList;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
+import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A set of value reference pairs.
@@ -32,17 +32,17 @@ public interface ValueList {
     /**
      * A pair of a value together with its global unique id.
      *
-     * More information under https://admin-shell.io/aas/3/0/ValueList/valueReferencePairs
+     * More information under https://admin-shell.io/aas/3/0/ValueList/valueReferencePair
      *
      * @return Returns the List of ValueReferencePairs for the property valueReferencePairs.
      */
-    @IRI("https://admin-shell.io/aas/3/0/ValueList/valueReferencePairs")
+    @IRI("https://admin-shell.io/aas/3/0/ValueList/valueReferencePair")
     List<ValueReferencePair> getValueReferencePairs();
 
     /**
      * A pair of a value together with its global unique id.
      *
-     * More information under https://admin-shell.io/aas/3/0/ValueList/valueReferencePairs
+     * More information under https://admin-shell.io/aas/3/0/ValueList/valueReferencePair
      *
      * @param valueReferencePairs desired value for the property valueReferencePairs.
      */

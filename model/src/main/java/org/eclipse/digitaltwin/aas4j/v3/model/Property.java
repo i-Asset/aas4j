@@ -14,11 +14,10 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.KnownSubtypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultProperty;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * A property is a data element that has a single value.
@@ -50,31 +49,31 @@ public interface Property extends DataElement {
     /**
      * Reference to the global unique ID of a coded value.
      *
-     * More information under https://admin-shell.io/aas/3/0/Property/valueID
+     * More information under https://admin-shell.io/aas/3/0/Property/valueId
      *
-     * @return Returns the Reference for the property valueID.
+     * @return Returns the Reference for the property valueId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Property/valueID")
-    Reference getValueID();
+    @IRI("https://admin-shell.io/aas/3/0/Property/valueId")
+    Reference getValueId();
 
     /**
      * Reference to the global unique ID of a coded value.
      *
-     * More information under https://admin-shell.io/aas/3/0/Property/valueID
+     * More information under https://admin-shell.io/aas/3/0/Property/valueId
      *
-     * @param valueID desired value for the property valueID.
+     * @param valueId desired value for the property valueId.
      */
-    void setValueID(Reference valueID);
+    void setValueId(Reference valueId);
 
     /**
      * Data type of the value
      *
      * More information under https://admin-shell.io/aas/3/0/Property/valueType
      *
-     * @return Returns the DataTypeDefXSD for the property valueType.
+     * @return Returns the DataTypeDefXsd for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/Property/valueType")
-    DataTypeDefXSD getValueType();
+    DataTypeDefXsd getValueType();
 
     /**
      * Data type of the value
@@ -83,6 +82,6 @@ public interface Property extends DataElement {
      *
      * @param valueType desired value for the property valueType.
      */
-    void setValueType(DataTypeDefXSD valueType);
+    void setValueType(DataTypeDefXsd valueType);
 
 }
