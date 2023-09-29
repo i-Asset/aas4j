@@ -14,165 +14,184 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Enumeration listing all XSD anySimpleTypes
  */
-@IRI("aas:DataTypeDefXSD")
-public enum DataTypeDefXSD {
+@IRI("aas:DataTypeDefXsd")
+public enum DataTypeDefXsd {
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/AnyUri")
-    ANY_URI,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/AnyUri")
+    ANY_URI("xs:anyURI"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Base64Binary")
-    BASE64BINARY,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Base64Binary")
+    BASE64BINARY("xs:base64Binary"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Boolean")
-    BOOLEAN,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Boolean")
+    BOOLEAN("xs:boolean"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Byte")
-    BYTE,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Byte")
+    BYTE("xs:byte"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Date")
-    DATE,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Date")
+    DATE("xs:date"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/DateTime")
-    DATE_TIME,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/DateTime")
+    DATE_TIME("xs:dateTime"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Decimal")
-    DECIMAL,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Decimal")
+    DECIMAL("xs:decimal"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Double")
-    DOUBLE,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Double")
+    DOUBLE("xs:double"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Duration")
-    DURATION,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Duration")
+    DURATION("xs:duration"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Float")
-    FLOAT,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float")
+    FLOAT("xs:float"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/GDay")
-    GDAY,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/GDay")
+    GDAY("xs:gDay"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/GMonth")
-    GMONTH,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/GMonth")
+    GMONTH("xs:gMonth"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/GMonthDay")
-    GMONTH_DAY,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/GMonthDay")
+    GMONTH_DAY("xs:gMonthDay"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/GYear")
-    GYEAR,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/GYear")
+    GYEAR("xs:gYear"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/GYearMonth")
-    GYEAR_MONTH,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/GYearMonth")
+    GYEAR_MONTH("xs:gYearMonth"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/HexBinary")
-    HEX_BINARY,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/HexBinary")
+    HEX_BINARY("xs:hexBinary"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Int")
-    INT,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Int")
+    INT("xs:int"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Integer")
-    INTEGER,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Integer")
+    INTEGER("xs:integer"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Long")
-    LONG,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Long")
+    LONG("xs:long"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/NegativeInteger")
-    NEGATIVE_INTEGER,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/NegativeInteger")
+    NEGATIVE_INTEGER("xs:negativeInteger"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/NonNegativeInteger")
-    NON_NEGATIVE_INTEGER,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/NonNegativeInteger")
+    NON_NEGATIVE_INTEGER("xs:nonNegativeInteger"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/NonPositiveInteger")
-    NON_POSITIVE_INTEGER,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/NonPositiveInteger")
+    NON_POSITIVE_INTEGER("xs:nonPositiveInteger"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/PositiveInteger")
-    POSITIVE_INTEGER,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/PositiveInteger")
+    POSITIVE_INTEGER("xs:positiveInteger"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Short")
-    SHORT,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Short")
+    SHORT("xs:short"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/String")
-    STRING,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/String")
+    STRING("xs:string"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/Time")
-    TIME,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/Time")
+    TIME("xs:time"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/UnsignedByte")
-    UNSIGNED_BYTE,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/UnsignedByte")
+    UNSIGNED_BYTE("xs:unsignedByte"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/UnsignedInt")
-    UNSIGNED_INT,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/UnsignedInt")
+    UNSIGNED_INT("xs:unsignedInt"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/UnsignedLong")
-    UNSIGNED_LONG,
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/UnsignedLong")
+    UNSIGNED_LONG("xs:unsignedLong"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXSD/UnsignedShort")
-    UNSIGNED_SHORT;
+    @IRI("https://admin-shell.io/aas/3/0/DataTypeDefXsd/UnsignedShort")
+    UNSIGNED_SHORT("xs:unsignedShort");
+
+    private String value;
+
+    DataTypeDefXsd(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static DataTypeDefXsd fromValue(String text) {
+        for (DataTypeDefXsd b : DataTypeDefXsd.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }

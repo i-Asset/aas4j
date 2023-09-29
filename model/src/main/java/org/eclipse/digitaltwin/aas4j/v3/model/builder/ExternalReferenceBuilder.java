@@ -14,14 +14,13 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model.builder;
 
-import org.eclipse.digitaltwin.aas4j.v3.model.Key;
-import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
-import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceTypes;
-
 import java.util.List;
 
+import org.eclipse.digitaltwin.aas4j.v3.model.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
-public abstract class ReferenceBuilder<T extends Reference, B extends ReferenceBuilder<T, B>> extends ExtendableBuilder<T, B> {
+public abstract class ExternalReferenceBuilder<T extends ExternalReference, B extends ExternalReferenceBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for keys
@@ -37,33 +36,11 @@ public abstract class ReferenceBuilder<T extends Reference, B extends ReferenceB
     /**
      * This function allows adding a value to the List keys
      * 
-     * @param keys desired value to be added
+     * @param key desired value to be added
      * @return Builder object with new value for keys
      */
-    public B keys(Key keys) {
-        getBuildingInstance().getKeys().add(keys);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for referredSemanticID
-     * 
-     * @param referredSemanticID desired value to be set
-     * @return Builder object with new value for referredSemanticID
-     */
-    public B referredSemanticID(Reference referredSemanticID) {
-        getBuildingInstance().setReferredSemanticID(referredSemanticID);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for type
-     * 
-     * @param type desired value to be set
-     * @return Builder object with new value for type
-     */
-    public B type(ReferenceTypes type) {
-        getBuildingInstance().setType(type);
+    public B key(Key key) {
+        getBuildingInstance().getKeys().add(key);
         return getSelf();
     }
 }

@@ -14,100 +14,119 @@
 
 package org.eclipse.digitaltwin.aas4j.v3.model;
 
-
-
 import org.eclipse.digitaltwin.aas4j.v3.model.annotations.IRI;
-
+import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 
 /**
  * Enumeration of all possible elements of a 'SubmodelElementList'.
  */
-@IRI("aas:AASSubmodelElements")
-public enum AASSubmodelElements {
+@IRI("aas:AasSubmodelElements")
+public enum AasSubmodelElements {
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/AnnotatedRelationshipElement")
-    ANNOTATED_RELATIONSHIP_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/AnnotatedRelationshipElement")
+    ANNOTATED_RELATIONSHIP_ELEMENT("AnnotatedRelationshipElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/BasicEventElement")
-    BASIC_EVENT_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/BasicEventElement")
+    BASIC_EVENT_ELEMENT("BasicEventElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/Blob")
-    BLOB,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/Blob")
+    BLOB("Blob"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/Capability")
-    CAPABILITY,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/Capability")
+    CAPABILITY("Capability"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/DataElement")
-    DATA_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/DataElement")
+    DATA_ELEMENT("DataElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/Entity")
-    ENTITY,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/Entity")
+    ENTITY("Entity"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/EventElement")
-    EVENT_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/EventElement")
+    EVENT_ELEMENT("EventElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/File")
-    FILE,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/File")
+    FILE("File"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/MultiLanguageProperty")
-    MULTI_LANGUAGE_PROPERTY,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/MultiLanguageProperty")
+    MULTI_LANGUAGE_PROPERTY("MultiLanguageProperty"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/Operation")
-    OPERATION,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/Operation")
+    OPERATION("Operation"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/Property")
-    PROPERTY,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/Property")
+    PROPERTY("Property"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/Range")
-    RANGE,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/Range")
+    RANGE("Range"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/ReferenceElement")
-    REFERENCE_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/ReferenceElement")
+    REFERENCE_ELEMENT("ReferenceElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/RelationshipElement")
-    RELATIONSHIP_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/RelationshipElement")
+    RELATIONSHIP_ELEMENT("RelationshipElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/SubmodelElement")
-    SUBMODEL_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/SubmodelElement")
+    SUBMODEL_ELEMENT("SubmodelElement"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/SubmodelElementCollection")
-    SUBMODEL_ELEMENT_COLLECTION,
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/SubmodelElementCollection")
+    SUBMODEL_ELEMENT_COLLECTION("SubmodelElementCollection"),
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/AASSubmodelElements/SubmodelElementList")
-    SUBMODEL_ELEMENT_LIST;
+    @IRI("https://admin-shell.io/aas/3/0/AasSubmodelElements/SubmodelElementList")
+    SUBMODEL_ELEMENT_LIST("SubmodelElementList");
+
+    private String value;
+
+    AasSubmodelElements(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    public static AasSubmodelElements fromValue(String text) {
+        for (AasSubmodelElements b : AasSubmodelElements.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 
 }
