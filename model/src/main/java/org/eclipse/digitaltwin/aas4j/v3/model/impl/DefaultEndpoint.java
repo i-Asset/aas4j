@@ -29,11 +29,11 @@ import org.eclipse.digitaltwin.aas4j.v3.model.builder.*;
 @IRI("aas:Endpoint")
 public class DefaultEndpoint implements Endpoint {
 
-    @IRI("https://admin-shell.io/aas/3/0/Endpoint/address")
-    protected String address;
+    @IRI("https://admin-shell.io/aas/3/0/Endpoint/endpointInterface")
+    protected String endpointInterface;
 
-    @IRI("https://admin-shell.io/aas/3/0/Endpoint/type")
-    protected String type;
+    @IRI("https://admin-shell.io/aas/3/0/Endpoint/protocolInformation")
+    protected ProtocolInformation protocolInformation;
 
     public DefaultEndpoint() {
 
@@ -41,8 +41,8 @@ public class DefaultEndpoint implements Endpoint {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.type,
-            this.address);
+        return Objects.hash(this.protocolInformation,
+            this.endpointInterface);
     }
 
     @Override
@@ -55,29 +55,29 @@ public class DefaultEndpoint implements Endpoint {
             return false;
         } else {
             DefaultEndpoint other = (DefaultEndpoint) obj;
-            return Objects.equals(this.type, other.type) &&
-                Objects.equals(this.address, other.address);
+            return Objects.equals(this.protocolInformation, other.protocolInformation) &&
+                Objects.equals(this.endpointInterface, other.endpointInterface);
         }
     }
 
     @Override
-    public String getType() {
-        return type;
+    public ProtocolInformation getProtocolInformation() {
+        return protocolInformation;
     }
 
     @Override
-    public void setType(String type) {
-        this.type = type;
+    public void setProtocolInformation(ProtocolInformation protocolInformation) {
+        this.protocolInformation = protocolInformation;
     }
 
     @Override
-    public String getAddress() {
-        return address;
+    public String getEndpointInterface() {
+        return endpointInterface;
     }
 
     @Override
-    public void setAddress(String address) {
-        this.address = address;
+    public void setEndpointInterface(String endpointInterface) {
+        this.endpointInterface = endpointInterface;
     }
 
     /**

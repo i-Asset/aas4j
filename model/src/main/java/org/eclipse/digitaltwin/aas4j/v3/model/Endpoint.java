@@ -30,39 +30,39 @@ public interface Endpoint {
     /**
      * Endpoint type.
      *
-     * More information under https://admin-shell.io/aas/3/0/Endpoint/type
+     * More information under https://admin-shell.io/aas/3/0/Endpoint/protocolInformation
      *
-     * @return Returns the String for the property type.
+     * @return Returns the ProtocolInformation for the property protocolInformation.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Endpoint/type")
-    String getType();
+    @IRI("https://admin-shell.io/aas/3/0/Endpoint/protocolInformation")
+    ProtocolInformation getProtocolInformation();
 
     /**
      * Endpoint type.
      *
-     * More information under https://admin-shell.io/aas/3/0/Endpoint/type
+     * More information under https://admin-shell.io/aas/3/0/Endpoint/protocolInformation
      *
-     * @param type desired value for the property type.
+     * @param protocolInformation desired value for the property protocolInformation.
      */
-    void setType(String type);
+    void setProtocolInformation(ProtocolInformation protocolInformation);
 
     /**
-     * Endpoint adress.
+     * Endpoint type.
      *
-     * More information under https://admin-shell.io/aas/3/0/Endpoint/address
+     * More information under https://admin-shell.io/aas/3/0/Endpoint/endpointInterface
      *
-     * @return Returns the String for the property address.
+     * @return Returns the String for the property endpointInterface.
      */
-    @IRI("https://admin-shell.io/aas/3/0/Endpoint/address")
-    String getAddress();
+    @IRI("https://admin-shell.io/aas/3/0/Endpoint/endpointInterface")
+    String getEndpointInterface();
 
     /**
-     * Endpoint adress.
+     * Endpoint type.
      *
-     * More information under https://admin-shell.io/aas/3/0/Endpoint/address
+     * More information under https://admin-shell.io/aas/3/0/Endpoint/endpointInterface
      *
-     * @param address desired value for the property address.
+     * @param endpointInterface desired value for the property endpointInterface.
      */
-    void setAddress(String address);
+    void setEndpointInterface(String endpointInterface);
 
 }

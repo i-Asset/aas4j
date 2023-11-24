@@ -20,24 +20,24 @@ import org.eclipse.digitaltwin.aas4j.v3.model.impl.*;
 public abstract class EndpointBuilder<T extends Endpoint, B extends EndpointBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for type
+     * This function allows setting a value for protocolInformation
      * 
-     * @param type desired value to be set
-     * @return Builder object with new value for type
+     * @param protocolInformation desired value to be set
+     * @return Builder object with new value for protocolInformation
      */
-    public B type(String type) {
-        getBuildingInstance().setType(type);
+    public B protocolInformation(ProtocolInformation protocolInformation) {
+        getBuildingInstance().setProtocolInformation(protocolInformation);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for address
+     * This function allows setting a value for endpointInterface
      * 
-     * @param address desired value to be set
-     * @return Builder object with new value for address
+     * @param endpointInterface desired value to be set
+     * @return Builder object with new value for endpointInterface
      */
-    public B address(String address) {
-        getBuildingInstance().setAddress(address);
+    public B endpointInterface(String endpointInterface) {
+        getBuildingInstance().setEndpointInterface(endpointInterface);
         return getSelf();
     }
 }
