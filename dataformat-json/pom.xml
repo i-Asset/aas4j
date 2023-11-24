@@ -13,11 +13,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.eclipse.digitaltwin.aas4j</groupId>
             <artifactId>dataformat-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.eclipse.digitaltwin.aas4j</groupId>
             <artifactId>dataformat-core</artifactId>
             <classifier>tests</classifier>
             <scope>test</scope>
